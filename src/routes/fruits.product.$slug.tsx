@@ -1,0 +1,122 @@
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
+import { Leaf, Truck, Sprout, ShoppingBag, Check, Minus, Plus } from "lucide-react";
+import { useState } from "react";
+import { getFruit, FRUIT_PRODUCTS } from "@/data/fruits";
+import { FruitCard } from "@/components/fruits/FruitCard";
+import { useCart } from "@/lib/cart";
+import { Rating } from "@/components/site/Rating";
+
+export const Route = createFileRoute("/fruits/product/$slug")({
+  loader: ({ params }) => {
+    const product = getFruit(params.slug);
+    if (!product) throw notFound();
+    return { product };
+  },
+  head: ({ loaderData }) => ({
+    meta: loaderData
+      ? [
+          { title: `${loaderData.product.name} — Berry and Curry` },
+          { name: "description", content: loaderData.product.blurb },
+          { property: "og:title", content: `${loaderData.product.name} — Berry and Curry` },
+          { property: "og:description", content: loaderData.product.blurb },
+          { property: "og:image", content: loaderData.product.image },
+        ]
+      : [{ title: "Unavailable" }, { name: "robots", content: "noindex" }],
+  }),
+  notFoundComponent: () => (
+    <div className="mx-auto max-w-2xl px-6 py-32 text-center">
+      <h1 className="font-display text-5xl">Sold out — or never was.</h1>
+      <p className="mt-4 text-muted-foreground">We couldn't find that item. It may be out of season.</p>
+      <Link to="/fruits/shop" className="mt-8 inline-flex items-center gap-2 text-primary underline underline-offset-8">Back to the market</Link>
+    </div>
+  ),
+  component: ProductPage,
+});
+
+function ProductPage() {
+  const { product } = Route.useLoaderData();
+  const related = FRUIT_PRODUCTS.filter((p) => p.category === product.category && p.slug !== product.slug).slice(0, 3);
+  const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+  const { add } = useCart();
+  const [added, setAdded] = useState(false);
+  const [qty, setQty] = useState(1);
+  const handleAdd = () => {
+    add({ slug: product.slug, dept: "fruits", name: product.name, price: product.price, image: product.image, weight: product.weight }, qty);
+    setAdded(true);
+    setTimeout(() => setAdded(false), 1600);
+  };
+
+  return (
+    <>
+      <div className="mx-auto max-w-7xl px-6 pt-8 text-sm text-muted-foreground lg:px-10">
+        <Link to="/" className="hover:text-primary">Home</Link>
+        <span className="mx-2">/</span>
+        <Link to="/fruits/shop" className="hover:text-primary">Fruits</Link>
+        <span className="mx-2">/</span>
+        <span className="text-foreground">{product.name}</span>
+      </div>
+
+      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 py-12 lg:grid-cols-[1.1fr_1fr] lg:gap-20 lg:px-10 lg:py-16">
+        <div className="relative">
+          <div className="absolute -inset-4 rounded-md bg-sage/20 blur-2xl" aria-hidden />
+          <img src={product.image} alt={product.name} className="relative aspect-square w-full rounded-sm object-cover shadow-[0_30px_80px_-30px_rgba(120,60,30,0.35)]" />
+        </div>
+        <div className="lg:pt-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">{product.categoryLabel}</p>
+          <h1 className="mt-3 font-display text-5xl leading-[1.02] text-foreground sm:text-6xl">{product.name}</h1>
+          <div className="mt-3"><Rating slug={product.slug} size="md" showCount /></div>
+          <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{product.blurb}</p>
+
+          <div className="mt-8 flex items-baseline gap-4">
+            <p className="font-display text-4xl text-foreground">₹{product.price.toLocaleString("en-IN")}</p>
+            {discount > 0 && <p className="text-lg text-muted-foreground line-through">₹{product.originalPrice.toLocaleString("en-IN")}</p>}
+            <span className="rounded-full bg-accent/40 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-sage-deep">{product.weight}</span>
+          </div>
+          <p className="mt-2 text-sm text-muted-foreground">Naturally ripened · inclusive of all taxes</p>
+
+          <div className="mt-8 rounded-sm border border-border/70 bg-card p-5">
+            <p className="text-sm text-foreground/80">{product.story}</p>
+          </div>
+
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <div className="inline-flex items-center rounded-full border border-border">
+              <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="grid size-11 place-items-center text-foreground hover:text-primary" aria-label="Decrease quantity"><Minus className="size-4" /></button>
+              <span className="w-10 text-center text-sm font-medium">{qty}</span>
+              <button onClick={() => setQty((q) => q + 1)} className="grid size-11 place-items-center text-foreground hover:text-primary" aria-label="Increase quantity"><Plus className="size-4" /></button>
+            </div>
+            <button onClick={handleAdd} className="group inline-flex flex-1 items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground transition-all hover:gap-4 hover:bg-clay-deep">
+              {added ? <><Check className="size-4" /> Added to cart</> : <><ShoppingBag className="size-4" /> Add {qty} · ₹{(product.price * qty).toLocaleString("en-IN")}</>}
+            </button>
+            <a href="tel:8310490087" className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-4 text-sm font-medium text-foreground hover:border-primary hover:text-primary">
+              Call · 8310490087
+            </a>
+          </div>
+
+          <div className="mt-10 grid grid-cols-3 gap-4 border-t border-border/70 pt-8">
+            <Trait icon={<Sprout className="size-4" />} label="Certified organic" />
+            <Trait icon={<Leaf className="size-4" />} label="Naturally ripened" />
+            <Trait icon={<Truck className="size-4" />} label="Cold-chain delivery" />
+          </div>
+        </div>
+      </section>
+
+      {related.length > 0 && (
+        <section className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
+          <h2 className="font-display text-3xl text-foreground sm:text-4xl">You might also like</h2>
+          <div className="mt-10 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+            {related.map((p) => <FruitCard key={p.slug} product={p} />)}
+          </div>
+        </section>
+      )}
+    </>
+  );
+}
+
+function Trait({ icon, label }: { icon: React.ReactNode; label: string }) {
+  return (
+    <div className="flex items-center gap-2 text-sm text-foreground/80">
+      <span className="text-primary">{icon}</span>
+      {label}
+    </div>
+  );
+}

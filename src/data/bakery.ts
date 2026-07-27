@@ -1,0 +1,192 @@
+import catBreads from "@/assets/cat-breads.jpg";
+import catBuns from "@/assets/cat-buns.jpg";
+import catRusk from "@/assets/cat-rusk.jpg";
+import catCrunch from "@/assets/cat-crunch.jpg";
+
+export type BakeCategory =
+  | "pav-bases"
+  | "breads"
+  | "buns"
+  | "rusk"
+  | "bites"
+  | "cookies"
+  | "cakes"
+  | "muffins";
+
+export interface BakeProduct {
+  slug: string;
+  name: string;
+  category: BakeCategory;
+  categoryLabel: string;
+  image: string;
+  price: number;
+  weight: string;
+  blurb: string;
+  story: string;
+}
+
+export const BAKERY_CATEGORIES: { id: BakeCategory; label: string; blurb: string }[] = [
+  { id: "pav-bases", label: "Pav & Pizza Bases", blurb: "Soft pav and ready-to-top pizza bases — classic and wholewheat." },
+  { id: "breads", label: "Fresh Breads", blurb: "Soft, fluffy loaves baked fresh every single morning." },
+  { id: "buns", label: "Soft Buns", blurb: "Pillowy buns — plain, cream, and our fluffy Korean bun." },
+  { id: "rusk", label: "Rusk, Khari & Sticks", blurb: "The perfect crunchy companion for your chai." },
+  { id: "bites", label: "Savoury Bites", blurb: "Bold, snackable bites for teatime cravings." },
+  { id: "cookies", label: "Cookies & Biscuits", blurb: "Classic bakes, healthy millets, and everything in between." },
+  { id: "cakes", label: "Cakes & Rolls", blurb: "Slices, forest cakes and rolls — baked fresh in-house." },
+  { id: "muffins", label: "Muffins & Brownies", blurb: "Rich, fudgy brownies and fluffy iced muffins." },
+];
+
+const mk = (
+  slug: string,
+  name: string,
+  category: BakeCategory,
+  price: number,
+  weight: string,
+  blurb: string,
+  image: string,
+): BakeProduct => {
+  const label = BAKERY_CATEGORIES.find((c) => c.id === category)!.label;
+  return {
+    slug,
+    name,
+    category,
+    categoryLabel: label,
+    image,
+    price,
+    weight,
+    blurb,
+    story: `${name} — baked fresh in-house with premium ingredients and old-school care.`,
+  };
+};
+
+export const BAKERY_PRODUCTS: BakeProduct[] = [
+  // Pav & Bases
+  mk("bombay-pav", "Bombay Pav", "pav-bases", 45, "per pack", "Soft, glossy classic Bombay pav.", catBreads),
+  mk("ww-bombay-pav", "Whole Wheat Bombay Pav", "pav-bases", 50, "per pack", "The classic pav, gone wholewheat.", catBreads),
+  mk("pizza-base", "Pizza Base", "pav-bases", 40, "per pack", "Ready-to-top, evenly baked base.", catBreads),
+  mk("ww-pizza-base", "Whole Wheat Pizza Base", "pav-bases", 45, "per pack", "Nutty wholewheat base for guilt-free pizzas.", "/produts/wheat_pizza_base.jpeg"),
+
+  // Breads
+  mk("bread", "Bread", "breads", 90, "400 g", "Our everyday loaf — soft and versatile.", "/produts/whole_wheat_bread.jpeg"),
+  mk("milk-bread", "Milk Bread", "breads", 70, "400 g", "Cloud-soft, milky and lightly sweet.", "/produts/milk_bread.jpeg"),
+  mk("sandwich-bread", "Sandwich Bread", "breads", 70, "400 g", "Perfectly square, endlessly versatile.", catBreads),
+  mk("fruit-bread", "Fruit Bread", "breads", 50, "300 g", "Studded with sweet dried fruit.", "/produts/fruit_bread.jpeg"),
+  mk("chocochip-bread", "Chocochip Bread", "breads", 55, "300 g", "Melty chocochips baked through.", catBreads),
+  mk("multigrain-bread", "Multigrain Bread", "breads", 60, "400 g", "Wholesome multigrain goodness.", "/produts/multigrain_bread.jpeg"),
+  mk("garlic-bread", "Garlic Bread", "breads", 99, "300 g", "Buttery, golden, garlicky.", catBreads),
+  mk("cheese-garlic-bread", "Cheese Garlic Bread", "breads", 120, "300 g", "Cheesy, garlicky, unmissable.", catBreads),
+  mk("focaccia-bread", "Focaccia Bread", "breads", 99, "300 g", "Herbed, olive-oiled Italian classic.", "/produts/foccacia_raed.jpeg"),
+
+  // Buns
+  mk("special-bun", "Special Bun", "buns", 45, "per piece", "Our house-special sweet bun.", "/produts/special_buns.jpeg"),
+  mk("chocolate-cream-bun", "Chocolate Cream Bun", "buns", 45, "per piece", "Pillowy bun filled with chocolate cream.", catBuns),
+  mk("cream-bun", "Cream Bun", "buns", 40, "per piece", "Soft bun with a sweet cream heart.", catBuns),
+  mk("mini-buns", "Mini Buns", "buns", 45, "6 pcs", "Pack of six soft mini buns.", "/produts/mini_buns.jpeg"),
+  mk("mini-cream-buns", "Mini Cream Buns", "buns", 50, "6 pcs", "Six mini buns, each with a cream centre.", catBuns),
+  mk("korean-bun", "Korean Bun", "buns", 150, "per piece", "Big, fluffy, cream-cheese-style Korean bun.", catBuns),
+
+  // Rusk, Khari & Sticks
+  mk("mini-rusk", "Mini Rusk", "rusk", 100, "200 g", "Bite-sized, twice-baked crunch.", catRusk),
+  mk("rusk", "Rusk", "rusk", 80, "250 g", "Crisp, golden, chai's best friend.", catRusk),
+  mk("ww-rusk", "Whole Wheat Rusk", "rusk", 110, "200 g", "Wholewheat crunch for the wholesome tea break.", catRusk),
+  mk("butter-sticks", "Butter Sticks", "rusk", 80, "250 g", "Rich, buttery, snappable sticks.", catRusk),
+  mk("soup-sticks", "Soup Sticks", "rusk", 80, "250 g", "Slender, crisp — perfect with soup.", catRusk),
+  mk("plain-khari", "Plain Khari", "rusk", 110, "250 g", "Flaky, layered puff pastry khari.", catRusk),
+
+  // Bites
+  mk("indian-bites", "Indian Bites", "bites", 75, "200 g", "Warm spices in every crunchy bite.", catCrunch),
+  mk("mexican-bites", "Mexican Bites", "bites", 75, "200 g", "Bold, tangy Mexican-spiced bites.", catCrunch),
+
+  // Cookies & Biscuits
+  mk("almond-crunch", "Almond Crunch", "cookies", 125, "200 g", "Buttery almond cookies with a satisfying snap.", catCrunch),
+  mk("cashew-crunch", "Cashew Crunch", "cookies", 125, "200 g", "Loaded with real cashew for a premium bite.", catCrunch),
+  mk("chocochips-cookies", "Chocochips Cookies", "cookies", 135, "200 g", "Classic cookie packed with chocochips.", catCrunch),
+  mk("coconut-cookies", "Coconut Cookies", "cookies", 110, "200 g", "Toasty coconut in every bite.", catCrunch),
+  mk("choco-vanilla-biscuits", "Choco Vanilla Biscuits", "cookies", 125, "200 g", "Chocolate and vanilla, side by side.", catCrunch),
+  mk("fruit-nuts-biscuits", "Fruit & Nuts Biscuits", "cookies", 135, "200 g", "Loaded with dried fruit and nuts.", catCrunch),
+  mk("masala-biscuits", "Masala Biscuits", "cookies", 95, "200 g", "Savoury-sweet with a masala kick.", catCrunch),
+  mk("jeera-biscuits", "Jeera Biscuits", "cookies", 95, "200 g", "Toasted-cumin classic teatime biscuit.", catCrunch),
+  mk("nankhatai-biscuits", "Nankhatai Biscuits", "cookies", 95, "200 g", "The melt-in-mouth ghee nankhatai.", catCrunch),
+  mk("sweet-salt-biscuits", "Sweet & Salt Biscuits", "cookies", 110, "200 g", "Sweet and salty in perfect balance.", catCrunch),
+  mk("pineapple-cream-biscuits", "Pineapple Cream Biscuits", "cookies", 110, "200 g", "Tangy pineapple cream sandwich biscuit.", catCrunch),
+  mk("ajwain-biscuits", "Ajwain Biscuits", "cookies", 95, "200 g", "Savoury, herby ajwain crunch.", catCrunch),
+  mk("millet-jaggery-cookies", "Millet Jaggery Cookies", "cookies", 125, "200 g", "Millets sweetened with pure jaggery.", catCrunch),
+  mk("oats-raisins-cookies", "Oats Raisins Cookies", "cookies", 110, "200 g", "Hearty oats and juicy raisins.", catCrunch),
+  mk("millets-cookies", "Millets Cookies", "cookies", 115, "200 g", "Wholesome multi-millet cookies.", catCrunch),
+
+  // Cakes & Rolls
+  mk("chocolate-cake-slice", "Chocolate Cake Slice", "cakes", 90, "per slice", "Rich, moist chocolate slice.", "/produts/chocolate_slice_cake.jpeg"),
+  mk("fruit-cake-slice", "Fruit Cake Slice", "cakes", 80, "per slice", "Buttery cake studded with fruit.", catBuns),
+  mk("marble-cake-slice", "Marble Cake Slice", "cakes", 90, "per slice", "Chocolate and vanilla, swirled.", "/produts/marble_slice_cake.jpeg"),
+  mk("vanilla-cake-slice", "Vanilla Cake Slice", "cakes", 80, "per slice", "Soft, classic vanilla slice.", "/produts/vanilla_cake_slice.jpeg"),
+  mk("wheat-cake-slice", "Wheat Cake Slice", "cakes", 99, "per slice", "Wholewheat cake — softer than you'd expect.", "/produts/wheat_slice_cake.jpeg"),
+  mk("millets-cake-slice", "Millets Cake Slice", "cakes", 99, "per slice", "Nutty millets in a tender crumb.", catBuns),
+  mk("banana-walnut-cake-slice", "Banana Walnut Cake Slice", "cakes", 105, "per slice", "Ripe banana and crunchy walnut.", "/produts/banana_walunut_cake_slice.jpeg"),
+  mk("swiss-roll", "Swiss Roll", "cakes", 145, "per roll", "Light sponge rolled around jammy cream.", "/produts/swiss_roll.jpeg"),
+  mk("jam-roll", "Jam Roll", "cakes", 135, "per roll", "The teatime jam roll classic.", catBuns),
+  mk("black-forest-cake", "Black Forest Cake", "cakes", 75, "per slice", "Chocolate, cherry and cream.", catBuns),
+  mk("white-forest-cake", "White Forest Cake", "cakes", 85, "per slice", "White chocolate, cherry and cream.", catBuns),
+
+  // Muffins & Brownies
+  mk("choco-walnut-brownie", "Choco Walnut Brownie", "muffins", 110, "per piece", "Fudgy chocolate brownie with walnuts.", catCrunch),
+  mk("chocolate-brownie", "Chocolate Brownie", "muffins", 100, "per piece", "The rich, chewy classic.", catCrunch),
+  mk("chocolate-icing-muffin", "Chocolate Icing Muffin", "muffins", 170, "per piece", "Chocolate muffin, iced.", catCrunch),
+  mk("chocolate-muffin", "Chocolate Muffin", "muffins", 110, "per piece", "Deep-chocolate everyday muffin.", catCrunch),
+  mk("fruit-muffin", "Fruit Muffin", "muffins", 90, "per piece", "Soft muffin flecked with fruit.", catCrunch),
+  mk("icing-muffin", "Icing Muffin", "muffins", 150, "per piece", "Vanilla muffin, iced.", catCrunch),
+  mk("red-velvet-icing-muffin", "Red Velvet Icing Muffin", "muffins", 185, "per piece", "Red velvet with cream cheese icing.", "/produts/red_velvet_muffins.jpeg"),
+  mk("red-velvet-muffin", "Red Velvet Muffin", "muffins", 120, "per piece", "The moist, cocoa-tinged classic.", catCrunch),
+  mk("vanilla-muffin", "Vanilla Muffin", "muffins", 90, "per piece", "Soft, buttery vanilla muffin.", "/produts/vanilla_muffins.jpeg"),
+];
+
+export const bakeryByCategory = (id: BakeCategory) =>
+  BAKERY_PRODUCTS.filter((p) => p.category === id);
+
+export const getBake = (slug: string) =>
+  BAKERY_PRODUCTS.find((p) => p.slug === slug);
+
+export interface Testimonial {
+  name: string;
+  location: string;
+  text: string;
+  rating: number;
+}
+
+export const BAKERY_TESTIMONIALS: Testimonial[] = [
+  {
+    name: "Priya Sharma",
+    location: "Mangalore",
+    text: "The bread is so soft and fresh! My family loves the milk bread - it's become our daily breakfast staple.",
+    rating: 5,
+  },
+  {
+    name: "Rahul Menon",
+    location: "Bangalore",
+    text: "Best bakery in town! The Korean bun is absolutely amazing - so fluffy and creamy. Highly recommend!",
+    rating: 5,
+  },
+  {
+    name: "Anjali Desai",
+    location: "Udupi",
+    text: "The crunch collection is addictive! Can't stop snacking on the almond crunch. Perfect with evening tea.",
+    rating: 5,
+  },
+  {
+    name: "Vikram Gowda",
+    location: "Mangalore",
+    text: "Ordered a cake for my daughter's birthday - it was fresh, delicious, and beautifully presented. Thank you!",
+    rating: 5,
+  },
+  {
+    name: "Meera Nair",
+    location: "Kasargod",
+    text: "The whole wheat pav is a game changer! Finally a healthy option that actually tastes great.",
+    rating: 5,
+  },
+  {
+    name: "Arjun Pai",
+    location: "Manipal",
+    text: "Their rusk is perfect for chai time. Crisp, not too sweet, and the quality is consistent every time.",
+    rating: 5,
+  },
+];
