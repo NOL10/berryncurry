@@ -82,16 +82,18 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("chocolate-cream-bun", "Chocolate Cream Bun", "buns", 45, "per piece", "Pillowy bun filled with chocolate cream.", catBuns),
   mk("cream-bun", "Cream Bun", "buns", 40, "per piece", "Soft bun with a sweet cream heart.", catBuns),
   mk("mini-buns", "Mini Buns", "buns", 45, "6 pcs", "Pack of six soft mini buns.", "/produts/mini_buns.jpeg"),
-  mk("mini-cream-buns", "Mini Cream Buns", "buns", 50, "6 pcs", "Six mini buns, each with a cream centre.", catBuns),
+  mk("mini-cream-buns", "Mini Cream Buns", "buns", 50, "6 pcs", "Six mini buns, each with a cream centre.", "/produts/mini cream bun.jpeg"),
+  mk("mini-donuts", "Mini Donuts", "buns", 85, "6 pcs", "Sweet mini donuts, glazed to perfection.", "/produts/mini donuts.jpeg"),
   mk("korean-bun", "Korean Bun", "buns", 150, "per piece", "Big, fluffy, cream-cheese-style Korean bun.", catBuns),
 
   // Rusk, Khari & Sticks
   mk("mini-rusk", "Mini Rusk", "rusk", 100, "200 g", "Bite-sized, twice-baked crunch.", catRusk),
   mk("rusk", "Rusk", "rusk", 80, "250 g", "Crisp, golden, chai's best friend.", catRusk),
-  mk("ww-rusk", "Whole Wheat Rusk", "rusk", 110, "200 g", "Wholewheat crunch for the wholesome tea break.", catRusk),
+  mk("ww-rusk", "Whole Wheat Rusk", "rusk", 110, "200 g", "Wholewheat crunch for the wholesome tea break.", "/produts/wheat rusk.jpeg"),
   mk("butter-sticks", "Butter Sticks", "rusk", 80, "250 g", "Rich, buttery, snappable sticks.", catRusk),
   mk("soup-sticks", "Soup Sticks", "rusk", 80, "250 g", "Slender, crisp — perfect with soup.", catRusk),
   mk("plain-khari", "Plain Khari", "rusk", 110, "250 g", "Flaky, layered puff pastry khari.", catRusk),
+  mk("papdi", "Papdi", "rusk", 95, "250 g", "Crisp, light papdi — perfect with tea.", "/produts/papdi.jpeg"),
 
   // Bites
   mk("indian-bites", "Indian Bites", "bites", 75, "200 g", "Warm spices in every crunchy bite.", catCrunch),
@@ -100,7 +102,7 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   // Cookies & Biscuits
   mk("almond-crunch", "Almond Crunch", "cookies", 125, "200 g", "Buttery almond cookies with a satisfying snap.", catCrunch),
   mk("cashew-crunch", "Cashew Crunch", "cookies", 125, "200 g", "Loaded with real cashew for a premium bite.", catCrunch),
-  mk("chocochips-cookies", "Chocochips Cookies", "cookies", 135, "200 g", "Classic cookie packed with chocochips.", catCrunch),
+  mk("chocochips-cookies", "Chocochips Cookies", "cookies", 135, "200 g", "Classic cookie packed with chocochips.", "/produts/chocochip cookies.jpeg"),
   mk("coconut-cookies", "Coconut Cookies", "cookies", 110, "200 g", "Toasty coconut in every bite.", catCrunch),
   mk("choco-vanilla-biscuits", "Choco Vanilla Biscuits", "cookies", 125, "200 g", "Chocolate and vanilla, side by side.", catCrunch),
   mk("fruit-nuts-biscuits", "Fruit & Nuts Biscuits", "cookies", 135, "200 g", "Loaded with dried fruit and nuts.", catCrunch),
@@ -117,7 +119,7 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   // Cakes & Rolls
   mk("chocolate-cake-slice", "Chocolate Cake Slice", "cakes", 90, "per slice", "Rich, moist chocolate slice.", "/produts/chocolate_slice_cake.jpeg"),
   mk("fruit-cake-slice", "Fruit Cake Slice", "cakes", 80, "per slice", "Buttery cake studded with fruit.", catBuns),
-  mk("marble-cake-slice", "Marble Cake Slice", "cakes", 90, "per slice", "Chocolate and vanilla, swirled.", "/produts/marble_slice_cake.jpeg"),
+  mk("marble-cake-slice", "Marble Cake Slice", "cakes", 90, "per slice", "Chocolate and vanilla, swirled.", "/produts/marbale cake.jpeg"),
   mk("vanilla-cake-slice", "Vanilla Cake Slice", "cakes", 80, "per slice", "Soft, classic vanilla slice.", "/produts/vanilla_cake_slice.jpeg"),
   mk("wheat-cake-slice", "Wheat Cake Slice", "cakes", 99, "per slice", "Wholewheat cake — softer than you'd expect.", "/produts/wheat_slice_cake.jpeg"),
   mk("millets-cake-slice", "Millets Cake Slice", "cakes", 99, "per slice", "Nutty millets in a tender crumb.", catBuns),
