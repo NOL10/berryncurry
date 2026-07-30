@@ -27,6 +27,7 @@ function BakeryHome() {
   const bites = bakeryByCategory("bites");
   const cakes = bakeryByCategory("cakes").slice(0, 4);
   const muffins = bakeryByCategory("muffins").slice(0, 4);
+  const donuts = bakeryByCategory("donuts");
 
   return (
     <>
@@ -222,6 +223,25 @@ function BakeryHome() {
         </div>
         <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
           {muffins.map((p) => <BakeCard key={p.slug} product={p} />)}
+        </div>
+      </section>
+
+      <section className="bg-sage/20">
+        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+          <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+            <div className="max-w-xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Donuts</p>
+              <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
+                Sweet, glazed<br /><span className="italic">treats.</span>
+              </h2>
+            </div>
+            <Link to="/bakery/shop" hash="donuts" className="group inline-flex items-center gap-2 text-sm font-medium text-foreground underline decoration-primary decoration-2 underline-offset-8">
+              All donuts <ArrowUpRight className="size-4" />
+            </Link>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+            {donuts.map((p) => <BakeCard key={p.slug} product={p} />)}
+          </div>
         </div>
       </section>
 

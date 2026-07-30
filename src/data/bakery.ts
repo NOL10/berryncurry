@@ -11,7 +11,8 @@ export type BakeCategory =
   | "bites"
   | "cookies"
   | "cakes"
-  | "muffins";
+  | "muffins"
+  | "donuts";
 
 export interface BakeProduct {
   slug: string;
@@ -34,6 +35,7 @@ export const BAKERY_CATEGORIES: { id: BakeCategory; label: string; blurb: string
   { id: "cookies", label: "Cookies & Biscuits", blurb: "Classic bakes, healthy millets, and everything in between." },
   { id: "cakes", label: "Cakes & Rolls", blurb: "Slices, forest cakes and rolls — baked fresh in-house." },
   { id: "muffins", label: "Muffins & Brownies", blurb: "Rich, fudgy brownies and fluffy iced muffins." },
+  { id: "donuts", label: "Donuts", blurb: "Sweet, glazed donuts — classic and chocolate varieties." },
 ];
 
 const mk = (
@@ -83,7 +85,6 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("cream-bun", "Cream Bun", "buns", 40, "per piece", "Soft bun with a sweet cream heart.", catBuns),
   mk("mini-buns", "Mini Buns", "buns", 45, "6 pcs", "Pack of six soft mini buns.", "/produts/mini_buns.jpeg"),
   mk("mini-cream-buns", "Mini Cream Buns", "buns", 50, "6 pcs", "Six mini buns, each with a cream centre.", "/produts/mini cream bun.jpeg"),
-  mk("mini-donuts", "Mini Donuts", "buns", 85, "6 pcs", "Sweet mini donuts, glazed to perfection.", "/produts/mini donuts.jpeg"),
   mk("korean-bun", "Korean Bun", "buns", 150, "per piece", "Big, fluffy, cream-cheese-style Korean bun.", catBuns),
 
   // Rusk, Khari & Sticks
@@ -93,25 +94,26 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("butter-sticks", "Butter Sticks", "rusk", 80, "250 g", "Rich, buttery, snappable sticks.", catRusk),
   mk("soup-sticks", "Soup Sticks", "rusk", 80, "250 g", "Slender, crisp — perfect with soup.", catRusk),
   mk("plain-khari", "Plain Khari", "rusk", 110, "250 g", "Flaky, layered puff pastry khari.", catRusk),
-  mk("papdi", "Papdi", "rusk", 95, "250 g", "Crisp, light papdi — perfect with tea.", "/produts/papdi.jpeg"),
 
   // Bites
   mk("indian-bites", "Indian Bites", "bites", 75, "200 g", "Warm spices in every crunchy bite.", catCrunch),
   mk("mexican-bites", "Mexican Bites", "bites", 75, "200 g", "Bold, tangy Mexican-spiced bites.", catCrunch),
+  mk("papdi", "Papdi", "bites", 80, "250 g", "Crisp, savoury papdi perfect for snacking.", "/produts/papdi.jpeg"),
 
   // Cookies & Biscuits
-  mk("almond-crunch", "Almond Crunch", "cookies", 125, "200 g", "Buttery almond cookies with a satisfying snap.", catCrunch),
-  mk("cashew-crunch", "Cashew Crunch", "cookies", 125, "200 g", "Loaded with real cashew for a premium bite.", catCrunch),
+  mk("almond-crunch", "Almond Crunch", "cookies", 125, "200 g", "Buttery almond cookies with a satisfying snap.", "/produts/almond crunch cookies.jpeg"),
+  mk("cashew-crunch", "Cashew Crunch", "cookies", 125, "200 g", "Loaded with real cashew for a premium bite.", "/produts/cashew crunch cookies.jpeg"),
   mk("chocochips-cookies", "Chocochips Cookies", "cookies", 135, "200 g", "Classic cookie packed with chocochips.", "/produts/chocochip cookies.jpeg"),
-  mk("coconut-cookies", "Coconut Cookies", "cookies", 110, "200 g", "Toasty coconut in every bite.", catCrunch),
-  mk("choco-vanilla-biscuits", "Choco Vanilla Biscuits", "cookies", 125, "200 g", "Chocolate and vanilla, side by side.", catCrunch),
-  mk("fruit-nuts-biscuits", "Fruit & Nuts Biscuits", "cookies", 135, "200 g", "Loaded with dried fruit and nuts.", catCrunch),
+  mk("coconut-cookies", "Coconut Cookies", "cookies", 110, "200 g", "Toasty coconut in every bite.", "/produts/coconut cookies.jpeg"),
+  mk("choco-vanilla-biscuits", "Choco Vanilla Biscuits", "cookies", 125, "200 g", "Chocolate and vanilla, side by side.", "/produts/choco vanilla cookies.jpeg"),
+  mk("fruit-nuts-biscuits", "Fruit & Nuts Biscuits", "cookies", 135, "200 g", "Loaded with dried fruit and nuts.", "/produts/fruitnnut cookies.jpeg"),
   mk("masala-biscuits", "Masala Biscuits", "cookies", 95, "200 g", "Savoury-sweet with a masala kick.", catCrunch),
-  mk("jeera-biscuits", "Jeera Biscuits", "cookies", 95, "200 g", "Toasted-cumin classic teatime biscuit.", catCrunch),
-  mk("nankhatai-biscuits", "Nankhatai Biscuits", "cookies", 95, "200 g", "The melt-in-mouth ghee nankhatai.", catCrunch),
-  mk("sweet-salt-biscuits", "Sweet & Salt Biscuits", "cookies", 110, "200 g", "Sweet and salty in perfect balance.", catCrunch),
-  mk("pineapple-cream-biscuits", "Pineapple Cream Biscuits", "cookies", 110, "200 g", "Tangy pineapple cream sandwich biscuit.", catCrunch),
-  mk("ajwain-biscuits", "Ajwain Biscuits", "cookies", 95, "200 g", "Savoury, herby ajwain crunch.", catCrunch),
+  mk("jeera-biscuits", "Jeera Biscuits", "cookies", 95, "200 g", "Toasted-cumin classic teatime biscuit.", "/produts/jeera cookies.jpeg"),
+  mk("nankhatai-biscuits", "Nankhatai Biscuits", "cookies", 95, "200 g", "The melt-in-mouth ghee nankhatai.", "/produts/nankhatai cookies.jpeg"),
+  mk("sweet-salt-biscuits", "Sweet & Salt Biscuits", "cookies", 110, "200 g", "Sweet and salty in perfect balance.", "/produts/sweetnsalt cookies.jpeg"),
+  mk("pineapple-cream-biscuits", "Pineapple Cream Biscuits", "cookies", 110, "200 g", "Tangy pineapple cream sandwich biscuit.", "/produts/pineapple cream cookies.jpeg"),
+  mk("ajwain-biscuits", "Ajwain Biscuits", "cookies", 95, "200 g", "Savoury, herby ajwain crunch.", "/produts/ajwain cookies.jpeg"),
+  mk("ragi-cookies", "Ragi Cookies", "cookies", 110, "200 g", "Healthy ragi cookies with a nutty flavour.", "/produts/ragi cookies.jpeg"),
   mk("millet-jaggery-cookies", "Millet Jaggery Cookies", "cookies", 125, "200 g", "Millets sweetened with pure jaggery.", catCrunch),
   mk("oats-raisins-cookies", "Oats Raisins Cookies", "cookies", 110, "200 g", "Hearty oats and juicy raisins.", catCrunch),
   mk("millets-cookies", "Millets Cookies", "cookies", 115, "200 g", "Wholesome multi-millet cookies.", catCrunch),
@@ -139,6 +141,12 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("red-velvet-icing-muffin", "Red Velvet Icing Muffin", "muffins", 185, "per piece", "Red velvet with cream cheese icing.", "/produts/red_velvet_muffins.jpeg"),
   mk("red-velvet-muffin", "Red Velvet Muffin", "muffins", 120, "per piece", "The moist, cocoa-tinged classic.", catCrunch),
   mk("vanilla-muffin", "Vanilla Muffin", "muffins", 90, "per piece", "Soft, buttery vanilla muffin.", "/produts/vanilla_muffins.jpeg"),
+
+  // Donuts
+  mk("mini-donuts", "Mini Donuts", "donuts", 120, "6 pcs", "Pack of six sweet mini donuts.", "/produts/mini donuts.jpeg"),
+  mk("chocolate-donuts", "Chocolate Donuts", "donuts", 150, "6 pcs", "Chocolate-glazed mini donuts.", "/produts/chocloate donuts.jpeg"),
+  mk("kitkat-donuts", "KitKat Donuts", "donuts", 180, "6 pcs", "KitKat-topped chocolate donuts.", "/produts/kitkat dounuts.jpeg"),
+  mk("mini-donuts-2", "Mini Donuts", "donuts", 120, "6 pcs", "Classic glazed mini donuts.", "/produts/minidonoguts.jpeg"),
 ];
 
 export const bakeryByCategory = (id: BakeCategory) =>
@@ -157,7 +165,7 @@ export interface Testimonial {
 export const BAKERY_TESTIMONIALS: Testimonial[] = [
   {
     name: "Priya Sharma",
-    location: "Mangalore",
+    location: "Bangalore",
     text: "The bread is so soft and fresh! My family loves the milk bread - it's become our daily breakfast staple.",
     rating: 5,
   },
@@ -169,25 +177,25 @@ export const BAKERY_TESTIMONIALS: Testimonial[] = [
   },
   {
     name: "Anjali Desai",
-    location: "Udupi",
+    location: "Bangalore",
     text: "The crunch collection is addictive! Can't stop snacking on the almond crunch. Perfect with evening tea.",
     rating: 5,
   },
   {
     name: "Vikram Gowda",
-    location: "Mangalore",
+    location: "bangalore",
     text: "Ordered a cake for my daughter's birthday - it was fresh, delicious, and beautifully presented. Thank you!",
     rating: 5,
   },
   {
     name: "Meera Nair",
-    location: "Kasargod",
+    location: "Bangalore",
     text: "The whole wheat pav is a game changer! Finally a healthy option that actually tastes great.",
     rating: 5,
   },
   {
     name: "Arjun Pai",
-    location: "Manipal",
+    location: "Bangalore",
     text: "Their rusk is perfect for chai time. Crisp, not too sweet, and the quality is consistent every time.",
     rating: 5,
   },
