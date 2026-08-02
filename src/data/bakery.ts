@@ -142,7 +142,7 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("fruit-muffin", "Fruit Muffin", "muffins", 90, "per piece", "Soft muffin flecked with fruit.", catCrunch),
   mk("icing-muffin", "Icing Muffin", "muffins", 150, "per piece", "Vanilla muffin, iced.", "/produts/iceing_muffin.jpeg"),
   mk("red-velvet-icing-muffin", "Red Velvet Icing Muffin", "muffins", 185, "per piece", "Red velvet with cream cheese icing.", "/produts/Red velvet iceing Muffin.jpeg"),
-  mk("red-velvet-muffin", "Red Velvet Muffin", "muffins", 120, "per piece", "The moist, cocoa-tinged classic.", catCrunch),
+  mk("red-velvet-muffin", "Red Velvet Muffin", "muffins", 120, "per piece", "The moist, cocoa-tinged classic.", "/produts/red velvet muffin.jpeg"),
   mk("vanilla-muffin", "Vanilla Muffin", "muffins", 90, "per piece", "Soft, buttery vanilla muffin.", "/produts/vanilla_muffins.jpeg"),
 
   // Donuts
