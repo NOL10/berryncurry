@@ -65,7 +65,7 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   // Pav & Bases
   mk("bombay-pav", "Bombay Pav", "pav-bases", 45, "per pack", "Soft, glossy classic Bombay pav.", catBreads),
   mk("ww-bombay-pav", "Whole Wheat Bombay Pav", "pav-bases", 50, "per pack", "The classic pav, gone wholewheat.", catBreads),
-  mk("pizza-base", "Pizza Base", "pav-bases", 40, "per pack", "Ready-to-top, evenly baked base.", catBreads),
+  mk("pizza-base", "Pizza Base", "pav-bases", 40, "per pack", "Ready-to-top, evenly baked base.", "produts/pizza base.jpeg"),
   mk("ww-pizza-base", "Whole Wheat Pizza Base", "pav-bases", 45, "per pack", "Nutty wholewheat base for guilt-free pizzas.", "/produts/wheat_pizza_base.jpeg"),
 
   // Breads
@@ -139,7 +139,7 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("chocolate-brownie", "Chocolate Brownie", "muffins", 100, "per piece", "The rich, chewy classic.", catCrunch),
   mk("chocolate-icing-muffin", "Chocolate Icing Muffin", "muffins", 170, "per piece", "Chocolate muffin, iced.", "/produts/chocolate_icing_muffin.jpeg"),
   mk("chocolate-muffin", "Chocolate Muffin", "muffins", 110, "per piece", "Deep-chocolate everyday muffin.", catCrunch),
-  mk("fruit-muffin", "Fruit Muffin", "muffins", 90, "per piece", "Soft muffin flecked with fruit.", catCrunch),
+  mk("fruit-muffin", "Fruit Muffin", "muffins", 90, "per piece", "Soft muffin flecked with fruit.", "/produts/fruitmuffin.jpeg"),
   mk("icing-muffin", "Icing Muffin", "muffins", 150, "per piece", "Vanilla muffin, iced.", "/produts/iceing_muffin.jpeg"),
   mk("red-velvet-icing-muffin", "Red Velvet Icing Muffin", "muffins", 185, "per piece", "Red velvet with cream cheese icing.", "/produts/Red velvet iceing Muffin.jpeg"),
   mk("red-velvet-muffin", "Red Velvet Muffin", "muffins", 120, "per piece", "The moist, cocoa-tinged classic.", "/produts/red velvet muffin.jpeg"),
