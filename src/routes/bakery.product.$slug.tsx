@@ -75,6 +75,17 @@ function ProductPage() {
             <p className="text-sm text-foreground/80">{product.story}</p>
           </div>
 
+          <div className="mt-6 rounded-sm border border-border/70 bg-card p-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary mb-3">Ingredients</p>
+            <div className="flex flex-wrap gap-2">
+              {product.ingredients.map((ingredient, index) => (
+                <span key={index} className="inline-flex items-center rounded-full bg-sage/40 px-3 py-1 text-xs font-medium text-foreground">
+                  {ingredient}
+                </span>
+              ))}
+            </div>
+          </div>
+
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <div className="inline-flex items-center rounded-full border border-border">
               <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="grid size-11 place-items-center text-foreground hover:text-primary" aria-label="Decrease quantity"><Minus className="size-4" /></button>
@@ -84,9 +95,7 @@ function ProductPage() {
             <button onClick={handleAdd} className="group inline-flex flex-1 items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground transition-all hover:gap-4 hover:bg-clay-deep">
               {added ? <><Check className="size-4" /> Added to cart</> : <><ShoppingBag className="size-4" /> Add {qty} · ₹{(product.price * qty).toLocaleString("en-IN")}</>}
             </button>
-            <a href="tel:8310490087" className="inline-flex items-center justify-center gap-2 rounded-full border border-border px-6 py-4 text-sm font-medium text-foreground hover:border-primary hover:text-primary">
-              <Phone className="size-4" /> Call to order · 8310490087
-            </a>
+
           </div>
 
           <div className="mt-10 grid grid-cols-3 gap-4 border-t border-border/70 pt-8">
