@@ -78,7 +78,7 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("fruit-bread", "Fruit Bread", "breads", 50, "300 g", "Studded with sweet dried fruit.", "/produts/fruit_bread.jpeg", ["Maida", "Mixed Dry Fruits", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
   mk("chocochip-bread", "Chocochip Bread", "breads", 55, "300 g", "Melty chocochips baked through.", "/produts/chocochip bread .png", ["Maida", "Chocolate Chips", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
   mk("multigrain-bread", "Multigrain Bread", "breads", 60, "400 g", "Wholesome multigrain goodness.", "/produts/multigrain_bread.jpeg", ["Multigrain Flour", "Yeast", "Sugar", "Salt", "Water", "Butter", "Seeds"]),
-  mk("garlic-bread", "Garlic Bread", "breads", 99, "300 g", "Buttery, golden, garlicky.", "/produts/garlic bread .png", ["Maida", "Garlic", "Butter", "Yeast", "Sugar", "Salt", "Water"]),
+  mk("garlic-bread", "Garlic Bread", "breads", 99, "300 g", "Buttery, golden, garlicky.", "/produts/garlic bread .jpeg", ["Maida", "Garlic", "Butter", "Yeast", "Sugar", "Salt", "Water"]),
   mk("cheese-garlic-bread", "Cheese Garlic Bread", "breads", 120, "300 g", "Cheesy, garlicky, unmissable.", "/produts/cheese garlic bread.png", ["Maida", "Garlic", "Cheese", "Butter", "Yeast", "Sugar", "Salt", "Water"]),
   mk("focaccia-bread", "Focaccia Bread", "breads", 99, "300 g", "Herbed, olive-oiled Italian classic.", "/produts/foccacia_raed.jpeg", ["Maida", "Olive Oil", "Herbs", "Yeast", "Sugar", "Salt", "Water"]),
 
@@ -101,10 +101,12 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   // Bites
   // mk("indian-bites", "Indian Bites", "bites", 75, "200 g", "Warm spices in every crunchy bite.", catCrunch, ["Maida", "Indian Spices", "Butter", "Salt"]),
   // mk("mexican-bites", "Mexican Bites", "bites", 75, "200 g", "Bold, tangy Mexican-spiced bites.", catCrunch, ["Maida", "Mexican Spices", "Butter", "Salt"]),
-  mk("papdi", "Papdi", "bites", 80, "250 g", "Crisp, savoury papdi perfect for snacking.", "/produts/papdi.jpeg", ["Maida", "Cumin", "Butter", "Salt"]),
-  mk("banana-chips", "Banana Chips", "bites", 85, "200 g", "Crispy, sweet banana chips for snacking.", "/produts/Banana Chips.jpeg", ["Raw Banana", "Salt", "Turmeric", "Oil"]),
-  mk("cashew-mixture", "Cashew Mixture", "bites", 150, "200 g", "Premium cashew mixture with savoury spices.", "/produts/Cashew Mixture.jpeg", ["Cashews", "Spices", "Salt", "Oil"]),
-  mk("broccoli-vacuum-fried-chips", "Broccoli Vacuum Fried Chips", "bites", 150, "200 g", "Crispy, healthy vacuum-fried broccoli chips.", "/produts/Broccoli Vaccam fried Chips..jpeg", ["Broccoli", "Salt", "Oil"]),
+  mk("papdi", "Papdi", "bites", 80, 'pack', "Crisp, savoury papdi perfect for snacking.", "/produts/papdi.jpeg", ["Maida", "Cumin", "Butter", "Salt"]),
+  mk("banana-chips", "Banana Chips", "bites", 85, 'pack', "Crispy, sweet banana chips for snacking.", "/produts/Banana Chips.jpeg", ["Raw Banana", "Salt", "Turmeric", "Oil"]),
+  mk("cashew-mixture", "Cashew Mixture", "bites", 150, 'pack', "Premium cashew mixture with savoury spices.", "/produts/Cashew Mixture.jpeg", ["Cashews", "Spices", "Salt", "Oil"]),
+  mk("broccoli-vacuum-fried-chips", "Broccoli Vacuum Fried Chips", "bites", 150, 'pack', "Crispy, healthy vacuum-fried broccoli chips.", "/produts/Broccoli Vaccam fried Chips..jpeg", ["Broccoli", "Salt", "Oil"]),
+  mk("khakhra", "Khakhra", "bites", 95, 'pack', "Traditional crispy Gujarati snack.", "/produts/Khakhra mobile.jpeg", ["Whole Wheat Flour", "Oil", "Salt", "Cumin"]),
+  mk("whole-wheat-khakhra", "Whole Wheat Khakhra", "bites", 95, 'pack', "Healthy whole wheat khakhra.", "/produts/Whole wheat khakhra.jpeg", ["Whole Wheat Flour", "Oil", "Salt", "Cumin"]),
 
   // Cookies & Biscuits
   mk("almond-crunch", "Almond Crunch", "cookies", 125, "200 g", "Buttery almond cookies with a satisfying snap.", "/produts/almond crunch cookies.jpeg", ["Maida", "Almonds", "Butter", "Sugar", "Salt"]),
