@@ -78,11 +78,12 @@ function Index() {
 
       {/* PROMISES ticker */}
       <section className="border-y border-border/60 bg-secondary text-secondary-foreground">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-8 px-6 py-8 md:grid-cols-4 lg:px-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-8 px-6 py-8 md:grid-cols-5 lg:px-10">
           <Promise icon={<Leaf className="size-4" />} title="Naturally grown" />
           <Promise icon={<Truck className="size-4" />} title="Cold-chain delivery" />
           <Promise icon={<Wheat className="size-4" />} title="Baked fresh daily" />
           <Promise icon={<Sparkles className="size-4" />} title="Clean & hygienic" />
+          <Promise icon={<Leaf className="size-4" />} title="100% vegetarian" />
         </div>
       </section>
 
