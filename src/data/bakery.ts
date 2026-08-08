@@ -124,7 +124,7 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("ragi-cookies", "Ragi Cookies", "cookies", 110, "200 g", "Healthy ragi cookies with a nutty flavour.", "/produts/ragi cookies.jpeg", ["Ragi Flour", "Butter", "Sugar", "Salt"]),
   mk("millet-jaggery-cookies", "Millet Jaggery Cookies", "cookies", 125, "200 g", "Millets sweetened with pure jaggery.", '/produts/millet jaggery cookies.png', ["Millet Flour", "Jaggery", "Butter", "Salt"]),
   mk("oats-raisins-cookies", "Oats Raisins Cookies", "cookies", 110, "200 g", "Hearty oats and juicy raisins.", '/produts/oats rasin cookies.png', ["Maida", "Oats", "Raisins", "Butter", "Sugar", "Salt"]),
-  mk("millets-cookies", "Millets Cookies", "cookies", 115, "200 g", "Wholesome multi-millet cookies.", '/produts/millet cookies.png', ["Millet Flour", "Butter", "Sugar", "Salt"]),
+  // mk("millets-cookies", "Millets Cookies", "cookies", 115, "200 g", "Wholesome multi-millet cookies.", '/produts/millet cookies.png', ["Millet Flour", "Butter", "Sugar", "Salt"]),
 
   // Cakes & Rolls
   mk("chocolate-cake-slice", "Chocolate Cake Slice", "cakes", 90, "per slice", "Rich, moist chocolate slice.", "/produts/chocolate_slice_cake.jpeg", ["Maida", "Cocoa", "Butter", "Sugar", "Eggs", "Milk"]),
