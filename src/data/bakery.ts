@@ -104,6 +104,7 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("papdi", "Papdi", "bites", 80, "250 g", "Crisp, savoury papdi perfect for snacking.", "/produts/papdi.jpeg", ["Maida", "Cumin", "Butter", "Salt"]),
   mk("banana-chips", "Banana Chips", "bites", 85, "200 g", "Crispy, sweet banana chips for snacking.", "/produts/Banana Chips.jpeg", ["Raw Banana", "Salt", "Turmeric", "Oil"]),
   mk("cashew-mixture", "Cashew Mixture", "bites", 150, "200 g", "Premium cashew mixture with savoury spices.", "/produts/Cashew Mixture.jpeg", ["Cashews", "Spices", "Salt", "Oil"]),
+  mk("broccoli-vacuum-fried-chips", "Broccoli Vacuum Fried Chips", "bites", 150, "200 g", "Crispy, healthy vacuum-fried broccoli chips.", "/produts/Broccoli Vaccam fried Chips..jpeg", ["Broccoli", "Salt", "Oil"]),
 
   // Cookies & Biscuits
   mk("almond-crunch", "Almond Crunch", "cookies", 125, "200 g", "Buttery almond cookies with a satisfying snap.", "/produts/almond crunch cookies.jpeg", ["Maida", "Almonds", "Butter", "Sugar", "Salt"]),

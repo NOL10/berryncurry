@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Phone } from "lucide-react";
-import logo from "@/assets/bnc-logo.png";
+import logo from "@/assets/bnc-logo.jpeg";
 
 type FooterLink = { to: string; label: string; hash?: string };
 

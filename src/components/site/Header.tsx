@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { MessageCircle, ShoppingBag } from "lucide-react";
-import logo from "@/assets/bnc-logo.png";
+import logo from "@/assets/bnc-logo.jpeg";
 import { useCart } from "@/lib/cart";
 
 export function Header() {
