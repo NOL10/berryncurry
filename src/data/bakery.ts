@@ -76,10 +76,10 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("milk-bread", "Milk Bread", "breads", 70, "400 g", "Cloud-soft, milky and lightly sweet.", "/produts/milk_bread.jpeg", ["Maida", "Milk", "Yeast", "Sugar", "Salt", "Butter"]),
   mk("sandwich-bread", "Sandwich Bread", "breads", 70, "400 g", "Perfectly square, endlessly versatile.", "/produts/sandwich_bread.png", ["Maida", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
   mk("fruit-bread", "Fruit Bread", "breads", 50, "300 g", "Studded with sweet dried fruit.", "/produts/fruit_bread.jpeg", ["Maida", "Mixed Dry Fruits", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
-  mk("chocochip-bread", "Chocochip Bread", "breads", 55, "300 g", "Melty chocochips baked through.", catBreads, ["Maida", "Chocolate Chips", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
+  mk("chocochip-bread", "Chocochip Bread", "breads", 55, "300 g", "Melty chocochips baked through.", "/produts/chocochip bread .png", ["Maida", "Chocolate Chips", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
   mk("multigrain-bread", "Multigrain Bread", "breads", 60, "400 g", "Wholesome multigrain goodness.", "/produts/multigrain_bread.jpeg", ["Multigrain Flour", "Yeast", "Sugar", "Salt", "Water", "Butter", "Seeds"]),
-  mk("garlic-bread", "Garlic Bread", "breads", 99, "300 g", "Buttery, golden, garlicky.", catBreads, ["Maida", "Garlic", "Butter", "Yeast", "Sugar", "Salt", "Water"]),
-  mk("cheese-garlic-bread", "Cheese Garlic Bread", "breads", 120, "300 g", "Cheesy, garlicky, unmissable.", catBreads, ["Maida", "Garlic", "Cheese", "Butter", "Yeast", "Sugar", "Salt", "Water"]),
+  mk("garlic-bread", "Garlic Bread", "breads", 99, "300 g", "Buttery, golden, garlicky.", "/produts/garlic bread .png", ["Maida", "Garlic", "Butter", "Yeast", "Sugar", "Salt", "Water"]),
+  mk("cheese-garlic-bread", "Cheese Garlic Bread", "breads", 120, "300 g", "Cheesy, garlicky, unmissable.", "/produts/cheese garlic bread.png", ["Maida", "Garlic", "Cheese", "Butter", "Yeast", "Sugar", "Salt", "Water"]),
   mk("focaccia-bread", "Focaccia Bread", "breads", 99, "300 g", "Herbed, olive-oiled Italian classic.", "/produts/foccacia_raed.jpeg", ["Maida", "Olive Oil", "Herbs", "Yeast", "Sugar", "Salt", "Water"]),
 
   // Buns
@@ -119,23 +119,23 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("pineapple-cream-biscuits", "Pineapple Cream Biscuits", "cookies", 110, "200 g", "Tangy pineapple cream sandwich biscuit.", "/produts/pineapple cream cookies.jpeg", ["Maida", "Pineapple Cream", "Butter", "Sugar", "Salt"]),
   mk("ajwain-biscuits", "Ajwain Biscuits", "cookies", 95, "200 g", "Savoury, herby ajwain crunch.", "/produts/ajwain cookies.jpeg", ["Maida", "Ajwain", "Butter", "Sugar", "Salt"]),
   mk("ragi-cookies", "Ragi Cookies", "cookies", 110, "200 g", "Healthy ragi cookies with a nutty flavour.", "/produts/ragi cookies.jpeg", ["Ragi Flour", "Butter", "Sugar", "Salt"]),
-  // mk("millet-jaggery-cookies", "Millet Jaggery Cookies", "cookies", 125, "200 g", "Millets sweetened with pure jaggery.", catCrunch, ["Millet Flour", "Jaggery", "Butter", "Salt"]),
-  // mk("oats-raisins-cookies", "Oats Raisins Cookies", "cookies", 110, "200 g", "Hearty oats and juicy raisins.", catCrunch, ["Maida", "Oats", "Raisins", "Butter", "Sugar", "Salt"]),
-  // mk("millets-cookies", "Millets Cookies", "cookies", 115, "200 g", "Wholesome multi-millet cookies.", catCrunch, ["Millet Flour", "Butter", "Sugar", "Salt"]),
+  mk("millet-jaggery-cookies", "Millet Jaggery Cookies", "cookies", 125, "200 g", "Millets sweetened with pure jaggery.", '/produts/millet jaggery cookies.png', ["Millet Flour", "Jaggery", "Butter", "Salt"]),
+  mk("oats-raisins-cookies", "Oats Raisins Cookies", "cookies", 110, "200 g", "Hearty oats and juicy raisins.", '/produts/oats rasin cookies.png', ["Maida", "Oats", "Raisins", "Butter", "Sugar", "Salt"]),
+  mk("millets-cookies", "Millets Cookies", "cookies", 115, "200 g", "Wholesome multi-millet cookies.", '/produts/millet cookies.png', ["Millet Flour", "Butter", "Sugar", "Salt"]),
 
   // Cakes & Rolls
   mk("chocolate-cake-slice", "Chocolate Cake Slice", "cakes", 90, "per slice", "Rich, moist chocolate slice.", "/produts/chocolate_slice_cake.jpeg", ["Maida", "Cocoa", "Butter", "Sugar", "Eggs", "Milk"]),
   mk("fruit-cake-slice", "Fruit Cake Slice", "cakes", 80, "per slice", "Buttery cake studded with fruit.", "/produts/Fruit Cake Slice.jpeg", ["Maida", "Dry Fruits", "Butter", "Sugar", "Eggs", "Milk"]),
-  mk("marble-cake-slice", "Marble Cake Slice", "cakes", 90, "per slice", "Chocolate and vanilla, swirled.", "/produts/marbale cake.jpeg", ["Maida", "Cocoa", "Vanilla", "Butter", "Sugar", "Eggs", "Milk"]),
+  mk("marble-cake-slice", "Marble Cake Slice", "cakes", 90, "per slice", "Chocolate and vanilla, swirled.", "/produts/marble_slice_cake.jpeg", ["Maida", "Cocoa", "Vanilla", "Butter", "Sugar", "Eggs", "Milk"]),
   mk("vanilla-cake-slice", "Vanilla Cake Slice", "cakes", 80, "per slice", "Soft, classic vanilla slice.", "/produts/vanilla_cake_slice.jpeg", ["Maida", "Vanilla", "Butter", "Sugar", "Eggs", "Milk"]),
   mk("wheat-cake-slice", "Wheat Cake Slice", "cakes", 99, "per slice", "Wholewheat cake — softer than you'd expect.", "/produts/wheat_slice_cake.jpeg", ["Whole Wheat Flour", "Butter", "Sugar", "Eggs", "Milk"]),
-  mk("millets-cake-slice", "Millets Cake Slice", "cakes", 99, "per slice", "Nutty millets in a tender crumb.", catBuns, ["Millet Flour", "Butter", "Sugar", "Eggs", "Milk"]),
+  mk("millets-cake-slice", "Millets Cake Slice", "cakes", 99, "per slice", "Nutty millets in a tender crumb.", "/produts/millets cake slice.png", ["Millet Flour", "Butter", "Sugar", "Eggs", "Milk"]),
   mk("banana-walnut-cake-slice", "Banana Walnut Cake Slice", "cakes", 105, "per slice", "Ripe banana and crunchy walnut.", "/produts/banana_walunut_cake_slice.jpeg", ["Maida", "Banana", "Walnuts", "Butter", "Sugar", "Eggs", "Milk"]),
   mk("swiss-roll", "Swiss Roll", "cakes", 145, "per roll", "Light sponge rolled around jammy cream.", "/produts/swiss_roll.jpeg", ["Maida", "Jam", "Cream", "Butter", "Sugar", "Eggs", "Milk"]),
   mk("cream-rolls", "Cream Rolls", "cakes", 140, "per roll", "Sweet cream-filled pastry rolls.", "/produts/cream_rolls.jpeg", ["Maida", "Cream", "Butter", "Sugar", "Eggs", "Milk"]),
-  mk("jam-roll", "Jam Roll", "cakes", 135, "per roll", "The teatime jam roll classic.", catBuns, ["Maida", "Jam", "Butter", "Sugar", "Eggs", "Milk"]),
-  mk("black-forest-cake", "Black Forest Cake", "cakes", 75, "per slice", "Chocolate, cherry and cream.", catBuns, ["Maida", "Cocoa", "Cherries", "Cream", "Butter", "Sugar", "Eggs", "Milk"]),
-  mk("white-forest-cake", "White Forest Cake", "cakes", 85, "per slice", "White chocolate, cherry and cream.", catBuns, ["Maida", "White Chocolate", "Cherries", "Cream", "Butter", "Sugar", "Eggs", "Milk"]),
+  mk("jam-roll", "Jam Roll", "cakes", 135, "per roll", "The teatime jam roll classic.", "/produts/jam roll.png", ["Maida", "Jam", "Butter", "Sugar", "Eggs", "Milk"]),
+  mk("black-forest-cake", "Black Forest Cake", "cakes", 75, "per slice", "Chocolate, cherry and cream.", "/produts/black forest cake .png", ["Maida", "Cocoa", "Cherries", "Cream", "Butter", "Sugar", "Eggs", "Milk"]),
+  mk("white-forest-cake", "White Forest Cake", "cakes", 85, "per slice", "White chocolate, cherry and cream.", "/produts/white forest cake .png", ["Maida", "White Chocolate", "Cherries", "Cream", "Butter", "Sugar", "Eggs", "Milk"]),
 
   // Muffins & Brownies
   mk("choco-walnut-brownie", "Choco Walnut Brownie", "muffins", 110, "per piece", "Fudgy chocolate brownie with walnuts.", "/produts/Choco walnut brownie.jpeg", ["Maida", "Cocoa", "Walnuts", "Butter", "Sugar", "Eggs", "Milk"]),
@@ -149,10 +149,10 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("vanilla-muffin", "Vanilla Muffin", "muffins", 90, "per piece", "Soft, buttery vanilla muffin.", "/produts/vanilla_muffins.jpeg", ["Maida", "Vanilla", "Butter", "Sugar", "Eggs", "Milk"]),
 
   // Donuts
-  mk("mini-donuts", "Mini Donuts", "donuts", 120, "per piece", "Pack of six sweet mini donuts.", "/produts/mini donuts.jpeg", ["Maida", "Sugar", "Butter", "Yeast", "Milk", "Glaze"]),
-  mk("chocolate-donuts", "Chocolate Donuts", "donuts", 150, "per piece", "Chocolate-glazed mini donuts.", "/produts/chocloate donuts.jpeg", ["Maida", "Cocoa", "Sugar", "Butter", "Yeast", "Milk", "Chocolate Glaze"]),
-  mk("kitkat-donuts", "KitKat Donuts", "donuts", 180, "per piece", "KitKat-topped chocolate donuts.", "/produts/kitkat dounuts.jpeg", ["Maida", "Cocoa", "Sugar", "Butter", "Yeast", "Milk", "KitKat", "Chocolate Glaze"]),
-  // mk("mini-donuts-2", "Mini Donuts", "donuts", 120, "per piece", "Classic glazed mini donuts.", "/produts/minidonoguts.jpeg", ["Maida", "Sugar", "Butter", "Yeast", "Milk", "Glaze"]),
+  mk("mini-donuts", "Mini Donuts", "donuts", 120, "6 pcs", "Pack of six sweet mini donuts.", "/produts/mini donuts.jpeg", ["Maida", "Sugar", "Butter", "Yeast", "Milk", "Glaze"]),
+  mk("chocolate-donuts", "Chocolate Donuts", "donuts", 150, "6 pcs", "Chocolate-glazed mini donuts.", "/produts/chocloate donuts.jpeg", ["Maida", "Cocoa", "Sugar", "Butter", "Yeast", "Milk", "Chocolate Glaze"]),
+  mk("kitkat-donuts", "KitKat Donuts", "donuts", 180, "6 pcs", "KitKat-topped chocolate donuts.", "/produts/kitkat dounuts.jpeg", ["Maida", "Cocoa", "Sugar", "Butter", "Yeast", "Milk", "KitKat", "Chocolate Glaze"]),
+  // mk("mini-donuts-2", "Mini Donuts", "donuts", 120, "6 pcs", "Classic glazed mini donuts.", "/produts/minidonoguts.jpeg", ["Maida", "Sugar", "Butter", "Yeast", "Milk", "Glaze"]),
 ];
 
 export const bakeryByCategory = (id: BakeCategory) =>

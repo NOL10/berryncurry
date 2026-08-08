@@ -130,6 +130,77 @@ async function hmacSha256Hex(secret: string, message: string) {
     .join("");
 }
 
+async function sendOrderEmail({
+  customer,
+  order,
+  payment,
+}: {
+  customer: z.infer<typeof customerSchema>;
+  order: ReturnType<typeof calculateOrder> & { receipt: string };
+  payment: {
+    razorpayOrderId: string;
+    razorpayPaymentId: string;
+  };
+}) {
+  const resendApiKey = getEnv("RESEND_API_KEY");
+  const ownerEmail = getEnv("OWNER_EMAIL") ?? "hello@berryncurry.com";
+
+  if (!resendApiKey) {
+    console.warn("RESEND_API_KEY not configured, skipping email notification");
+    return;
+  }
+
+  const itemsList = order.items
+    .map((item) => `${item.qty}x ${item.name} - ₹${item.lineTotal.toLocaleString("en-IN")}`)
+    .join("\n");
+
+  const emailContent = `
+New Order Received!
+
+Order ID: ${order.receipt}
+Payment ID: ${payment.razorpayPaymentId}
+Order ID: ${payment.razorpayOrderId}
+
+Customer Details:
+Name: ${customer.name}
+Email: ${customer.email}
+Phone: ${customer.phone}
+Address: ${customer.address1}, ${customer.address2 || ""}, ${customer.city}, ${customer.state} - ${customer.pin}
+
+Order Details:
+${itemsList}
+
+Subtotal: ₹${order.subtotal.toLocaleString("en-IN")}
+Delivery: ${order.delivery === 0 ? "Free" : `₹${order.delivery}`}
+Total: ₹${order.total.toLocaleString("en-IN")}
+  `.trim();
+
+  try {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        authorization: `Bearer ${resendApiKey}`,
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        from: "Berry and Curry <orders@berryncurry.com>",
+        to: ownerEmail,
+        subject: `New Order: ${order.receipt}`,
+        text: emailContent,
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      console.error("Failed to send email:", error);
+      throw new Error(`Email notification failed: ${response.status}`);
+    }
+  } catch (error) {
+    console.error("Error sending order email:", error);
+    // Don't throw - we don't want to fail the order if email fails
+  }
+}
+
 async function notifyOrderPlaced({
   customer,
   order,
@@ -245,6 +316,15 @@ export const verifyRazorpayPayment = createServerFn({ method: "POST" })
     }
 
     await notifyOrderPlaced({
+      customer: data.customer,
+      order: { ...order, receipt: data.receipt },
+      payment: {
+        razorpayOrderId: data.razorpay_order_id,
+        razorpayPaymentId: data.razorpay_payment_id,
+      },
+    });
+
+    await sendOrderEmail({
       customer: data.customer,
       order: { ...order, receipt: data.receipt },
       payment: {

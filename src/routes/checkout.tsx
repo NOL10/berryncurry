@@ -161,6 +161,15 @@ function CheckoutPage() {
       setOrderId(verification.paymentId);
       clear();
       setStatus("success");
+      
+      // Redirect to success page
+      navigate({
+        to: "/order-success",
+        search: {
+          paymentId: verification.paymentId,
+          orderId: verification.orderId,
+        },
+      });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Payment could not be completed.");
       setStatus("idle");

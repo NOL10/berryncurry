@@ -13,7 +13,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const fruitPicks = FRUIT_PRODUCTS.filter((p) => p.category === "mangoes").slice(0, 3);
+  const fruitPicks = FRUIT_PRODUCTS.filter((p) => p.category === "exotic" && !p.outOfStock).slice(0, 3);
   const bakePicks = BAKERY_PRODUCTS.filter((p) => p.category === "cookies").slice(0, 3);
 
   return (
@@ -122,7 +122,7 @@ function Index() {
             <div className="max-w-xl">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">From the orchard</p>
               <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
-                This season's mangoes.
+                Fresh exotic fruits.
               </h2>
             </div>
             <Link to="/fruits/shop" className="group inline-flex items-center gap-2 text-sm font-medium text-foreground underline decoration-primary decoration-2 underline-offset-8">

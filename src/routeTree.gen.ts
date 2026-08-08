@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as CartRouteImport } from './routes/cart'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as OrderSuccessRouteImport } from './routes/order-success'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as BakeryIndexRouteImport } from './routes/bakery.index'
 import { Route as BakeryShopRouteImport } from './routes/bakery.shop'
@@ -45,6 +46,11 @@ const CheckoutRoute = CheckoutRouteImport.update({
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrderSuccessRoute = OrderSuccessRouteImport.update({
+  id: '/order-success',
+  path: '/order-success',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/cart': typeof CartRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/order-success': typeof OrderSuccessRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/bakery/shop': typeof BakeryShopRoute
   '/fruits/shop': typeof FruitsShopRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/cart': typeof CartRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/order-success': typeof OrderSuccessRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/bakery/shop': typeof BakeryShopRoute
   '/fruits/shop': typeof FruitsShopRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/cart': typeof CartRoute
   '/checkout': typeof CheckoutRoute
   '/contact': typeof ContactRoute
+  '/order-success': typeof OrderSuccessRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/bakery/shop': typeof BakeryShopRoute
   '/fruits/shop': typeof FruitsShopRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/cart'
     | '/checkout'
     | '/contact'
+    | '/order-success'
     | '/sitemap.xml'
     | '/bakery/shop'
     | '/fruits/shop'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/cart'
     | '/checkout'
     | '/contact'
+    | '/order-success'
     | '/sitemap.xml'
     | '/bakery/shop'
     | '/fruits/shop'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/cart'
     | '/checkout'
     | '/contact'
+    | '/order-success'
     | '/sitemap.xml'
     | '/bakery/shop'
     | '/fruits/shop'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   CartRoute: typeof CartRoute
   CheckoutRoute: typeof CheckoutRoute
   ContactRoute: typeof ContactRoute
+  OrderSuccessRoute: typeof OrderSuccessRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BakeryShopRoute: typeof BakeryShopRoute
   FruitsShopRoute: typeof FruitsShopRoute
@@ -221,6 +234,13 @@ declare module '@tanstack/react-router' {
       path: '/contact'
       fullPath: '/contact'
       preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/order-success': {
+      id: '/order-success'
+      path: '/order-success'
+      fullPath: '/order-success'
+      preLoaderRoute: typeof OrderSuccessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   CartRoute: CartRoute,
   CheckoutRoute: CheckoutRoute,
   ContactRoute: ContactRoute,
+  OrderSuccessRoute: OrderSuccessRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BakeryShopRoute: BakeryShopRoute,
   FruitsShopRoute: FruitsShopRoute,

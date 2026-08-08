@@ -11,6 +11,7 @@ export interface FruitProduct {
   weight: string;
   blurb: string;
   story: string;
+  outOfStock?: boolean;
 }
 
 export const FRUIT_CATEGORIES: { id: FruitCategory; label: string; blurb: string }[] = [
@@ -32,6 +33,7 @@ export const FRUIT_PRODUCTS: FruitProduct[] = [
     weight: "3 kg",
     blurb: "Three heritage varietals in one box — the perfect introduction.",
     story: "A tasting flight of North and South India's finest. Mallika for depth, Daseri for perfume, Langra for that classic tang.",
+    outOfStock: true,
   },
   {
     slug: "combo-langra-daseri",
@@ -44,6 +46,7 @@ export const FRUIT_PRODUCTS: FruitProduct[] = [
     weight: "3 kg",
     blurb: "For lovers of the classic North Indian pairing.",
     story: "Langra's honeyed tang meets Daseri's floral sweetness. A study in contrast.",
+    outOfStock: true,
   },
   {
     slug: "dasheri-3kg",
@@ -56,6 +59,7 @@ export const FRUIT_PRODUCTS: FruitProduct[] = [
     weight: "3 kg",
     blurb: "Fibreless, fragrant, and endlessly juicy.",
     story: "The heirloom mango of Uttar Pradesh — long, slender, and dripping with sugar.",
+    outOfStock: true,
   },
   {
     slug: "dhaseri",
@@ -68,6 +72,7 @@ export const FRUIT_PRODUCTS: FruitProduct[] = [
     weight: "3 kg",
     blurb: "Small orchard batch. Naturally ripened.",
     story: "Picked at peak by hand, boxed and shipped within the day. No calcium carbide, ever.",
+    outOfStock: true,
   },
   {
     slug: "langra",
@@ -80,6 +85,7 @@ export const FRUIT_PRODUCTS: FruitProduct[] = [
     weight: "3 kg",
     blurb: "Green-skinned, gold-fleshed, iconic Varanasi variety.",
     story: "Named for the limping farmer who first cultivated it — a Banarasi legend for good reason.",
+    outOfStock: true,
   },
   {
     slug: "mallika",
@@ -92,6 +98,7 @@ export const FRUIT_PRODUCTS: FruitProduct[] = [
     weight: "3 kg",
     blurb: "Neelam × Dasheri hybrid. Deep, dense, honeyed.",
     story: "Late-season mango with unmatched sweetness. Fibreless, thick-fleshed, and unforgettable.",
+    outOfStock: true,
   },
   {
     slug: "avocado-500g",
@@ -142,6 +149,18 @@ export const FRUIT_PRODUCTS: FruitProduct[] = [
     story: "Grown organically in Andhra Pradesh — the freshest cross-cultural fruit on the shelf.",
   },
   {
+    slug: "pomegranate-1kg",
+    name: "Pomegranate",
+    category: "exotic",
+    categoryLabel: "Exotic Organic Fruits",
+    image: "https://berryncurry.com/wp-content/uploads/2025/05/pomegranate-300x300.jpg",
+    price: 99,
+    originalPrice: 150,
+    weight: "1 kg",
+    blurb: "Ruby-red arils, sweet and tart.",
+    story: "Fresh from the orchard, packed with antioxidants and natural sweetness.",
+  },
+  {
     slug: "fruit-basket-1kg",
     name: "Fruit Basket",
     category: "baskets",
@@ -183,25 +202,25 @@ export interface FruitTestimonial {
 export const FRUIT_TESTIMONIALS: FruitTestimonial[] = [
   {
     name: "Sneha Reddy",
-    location: "Hyderabad",
+    location: "Bangalore",
     text: "The mangoes were absolutely divine! The Langra variety was perfectly ripe and so sweet. Best mangoes I've had in years.",
     rating: 5,
   },
   {
     name: "Karthik Nair",
-    location: "Chennai",
+    location: "Bangalore",
     text: "Ordered the fruit basket for a gift and it was beautifully arranged. Fresh, seasonal fruits and excellent presentation!",
     rating: 5,
   },
   {
     name: "Divya Patel",
-    location: "Mumbai",
+    location: "Bangalore",
     text: "The exotic fruits are top quality. The avocados were perfectly ripe and the dragon fruit was so fresh. Will order again!",
     rating: 5,
   },
   {
     name: "Rajesh Kumar",
-    location: "Delhi",
+    location: "Bangalore",
     text: "The mango combo box was a great idea. Got to try different varieties and each one was better than the last. Highly recommend!",
     rating: 5,
   },
@@ -213,7 +232,7 @@ export const FRUIT_TESTIMONIALS: FruitTestimonial[] = [
   },
   {
     name: "Vikram Singh",
-    location: "Pune",
+    location: "Bangalore",
     text: "The blueberries were amazing - so fresh and sweet. Great quality exotic fruits that are hard to find elsewhere.",
     rating: 5,
   },
