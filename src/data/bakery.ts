@@ -25,6 +25,7 @@ export interface BakeProduct {
   blurb: string;
   story: string;
   ingredients: string[];
+  outOfStock?: boolean;
 }
 
 export const BAKERY_CATEGORIES: { id: BakeCategory; label: string; blurb: string }[] = [
@@ -48,6 +49,7 @@ const mk = (
   blurb: string,
   image: string,
   ingredients: string[] = [],
+  outOfStock?: boolean,
 ): BakeProduct => {
   const label = BAKERY_CATEGORIES.find((c) => c.id === category)!.label;
   return {
@@ -61,6 +63,7 @@ const mk = (
     blurb,
     story: `${name} — baked fresh in-house with premium ingredients and old-school care.`,
     ingredients,
+    outOfStock,
   };
 };
 
@@ -76,7 +79,7 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("milk-bread", "Milk Bread", "breads", 70, "400 g", "Cloud-soft, milky and lightly sweet.", "/produts/milk_bread.jpeg", ["Maida", "Milk", "Yeast", "Sugar", "Salt", "Butter"]),
   mk("sandwich-bread", "Sandwich Bread", "breads", 70, "400 g", "Perfectly square, endlessly versatile.", "/produts/sandwich_bread.png", ["Maida", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
   mk("fruit-bread", "Fruit Bread", "breads", 50, "300 g", "Studded with sweet dried fruit.", "/produts/fruit_bread.jpeg", ["Maida", "Mixed Dry Fruits", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
-  mk("chocochip-bread", "Chocochip Bread", "breads", 55, "300 g", "Melty chocochips baked through.", "/produts/chocochip bread .png", ["Maida", "Chocolate Chips", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
+  mk("chocochip-bread", "Chocochip Bread", "breads", 55, "300 g", "Melty chocochips baked through.", "/produts/chocochip bread .png", ["Maida", "Chocolate Chips", "Yeast", "Sugar", "Salt", "Water", "Butter"], true),
   mk("multigrain-bread", "Multigrain Bread", "breads", 60, "400 g", "Wholesome multigrain goodness.", "/produts/multigrain_bread.jpeg", ["Multigrain Flour", "Yeast", "Sugar", "Salt", "Water", "Butter", "Seeds"]),
   mk("garlic-bread", "Garlic Bread", "breads", 99, "300 g", "Buttery, golden, garlicky.", "/produts/garlic bread .jpeg", ["Maida", "Garlic", "Butter", "Yeast", "Sugar", "Salt", "Water"]),
   mk("cheese-garlic-bread", "Cheese Garlic Bread", "breads", 120, "300 g", "Cheesy, garlicky, unmissable.", "/produts/cheese garlic bread.png", ["Maida", "Garlic", "Cheese", "Butter", "Yeast", "Sugar", "Salt", "Water"]),

@@ -14,8 +14,13 @@ export function BakeCard({ product }: { product: BakeProduct }) {
           src={product.image}
           alt={product.name}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${product.outOfStock ? "grayscale opacity-60" : ""}`}
         />
+        {product.outOfStock && (
+          <span className="absolute left-3 top-3 rounded-full bg-red-500/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm">
+            Out of Stock
+          </span>
+        )}
         <span className="absolute right-3 top-3 rounded-full bg-foreground/85 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.14em] text-background backdrop-blur-sm">
           {product.weight}
         </span>
@@ -25,16 +30,16 @@ export function BakeCard({ product }: { product: BakeProduct }) {
           <p className="text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
             {product.categoryLabel}
           </p>
-          <h3 className="mt-1 truncate font-display text-xl leading-tight text-foreground transition-colors group-hover:text-primary">
+          <h3 className={`mt-1 truncate font-display text-xl leading-tight transition-colors group-hover:text-primary ${product.outOfStock ? "text-muted-foreground" : "text-foreground"}`}>
             {product.name}
           </h3>
-          <p className="mt-1 line-clamp-1 text-sm text-muted-foreground">{product.blurb}</p>
+          <p className={`mt-1 line-clamp-1 text-sm ${product.outOfStock ? "text-muted-foreground" : "text-muted-foreground"}`}>{product.blurb}</p>
           <div className="mt-2">
             <Rating slug={product.slug} />
           </div>
         </div>
         <div className="shrink-0 text-right">
-          <p className="text-base font-semibold text-foreground">₹{product.price.toLocaleString("en-IN")}</p>
+          <p className={`text-base font-semibold ${product.outOfStock ? "text-muted-foreground" : "text-foreground"}`}>₹{product.price.toLocaleString("en-IN")}</p>
         </div>
       </div>
     </Link>

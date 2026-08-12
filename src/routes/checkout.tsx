@@ -110,13 +110,19 @@ function CheckoutPage() {
     );
   }
 
-  const delivery = subtotal >= 500 || subtotal === 0 ? 0 : 49;
+  const delivery = subtotal >= 500 || subtotal === 0 ? 0 : 100;
   const total = subtotal + delivery;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("processing");
     setError("");
+
+    if (subtotal < 500) {
+      setError("Minimum order value is ₹500. Please add more items to your cart.");
+      setStatus("idle");
+      return;
+    }
 
     try {
       const customer = getCheckoutCustomer(e.currentTarget);
