@@ -143,7 +143,7 @@ async function sendOrderEmail({
   };
 }) {
   const resendApiKey = getEnv("RESEND_API_KEY");
-  const ownerEmail = getEnv("OWNER_EMAIL") ?? "hello@berryncurry.com";
+  const ownerEmail = getEnv("OWNER_EMAIL") ?? "hello@berryncurry@gmail.com";
 
   if (!resendApiKey) {
     console.warn("RESEND_API_KEY not configured, skipping email notification");
