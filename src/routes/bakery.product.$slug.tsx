@@ -39,6 +39,7 @@ function ProductPage() {
   const [added, setAdded] = useState(false);
   const [qty, setQty] = useState(1);
   const handleAdd = () => {
+    if (product.outOfStock) return;
     add({ slug: product.slug, dept: "bakery", name: product.name, price: product.price, image: product.image, weight: product.weight }, qty);
     setAdded(true);
     setTimeout(() => setAdded(false), 1600);
@@ -88,12 +89,26 @@ function ProductPage() {
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <div className="inline-flex items-center rounded-full border border-border">
-              <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="grid size-11 place-items-center text-foreground hover:text-primary" aria-label="Decrease quantity"><Minus className="size-4" /></button>
+              <button onClick={() => setQty((q) => Math.max(1, q - 1))} className="grid size-11 place-items-center text-foreground hover:text-primary" aria-label="Decrease quantity" disabled={product.outOfStock}><Minus className="size-4" /></button>
               <span className="w-10 text-center text-sm font-medium">{qty}</span>
-              <button onClick={() => setQty((q) => q + 1)} className="grid size-11 place-items-center text-foreground hover:text-primary" aria-label="Increase quantity"><Plus className="size-4" /></button>
+              <button onClick={() => setQty((q) => q + 1)} className="grid size-11 place-items-center text-foreground hover:text-primary" aria-label="Increase quantity" disabled={product.outOfStock}><Plus className="size-4" /></button>
             </div>
-            <button onClick={handleAdd} className="group inline-flex flex-1 items-center justify-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground transition-all hover:gap-4 hover:bg-clay-deep">
-              {added ? <><Check className="size-4" /> Added to cart</> : <><ShoppingBag className="size-4" /> Add {qty} · ₹{(product.price * qty).toLocaleString("en-IN")}</>}
+            <button 
+              onClick={handleAdd} 
+              disabled={product.outOfStock}
+              className={`group inline-flex flex-1 items-center justify-center gap-3 rounded-full px-8 py-4 text-sm font-medium transition-all hover:gap-4 ${
+                product.outOfStock 
+                  ? "bg-muted text-muted-foreground cursor-not-allowed" 
+                  : "bg-primary text-primary-foreground hover:bg-clay-deep"
+              }`}
+            >
+              {product.outOfStock ? (
+                <>Out of Stock</>
+              ) : added ? (
+                <><Check className="size-4" /> Added to cart</>
+              ) : (
+                <><ShoppingBag className="size-4" /> Add {qty} · ₹{(product.price * qty).toLocaleString("en-IN")}</>
+              )}
             </button>
 
           </div>

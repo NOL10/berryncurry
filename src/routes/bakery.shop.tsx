@@ -9,7 +9,7 @@ export const Route = createFileRoute("/bakery/shop")({
       { title: "Bakery Catalogue — Berry and Curry" },
       { name: "description", content: "Browse every fresh bake — breads, buns, rusk, snacks and signature crunchy bites." },
       { property: "og:title", content: "Bakery Catalogue — Berry and Curry" },
-      { property: "og:description", content: "Freshly baked breads, buns, rusk and crunchy bites. Order on 8310490087." },
+      { property: "og:description", content: "Freshly baked breads, buns, rusk and crunchy bites. Order on 6362428384." },
     ],
   }),
   component: Shop,
@@ -30,7 +30,7 @@ function Shop() {
           </h1>
           <p className="mt-6 max-w-xl text-muted-foreground">
             {BAKERY_PRODUCTS.length} fresh bakes · call{" "}
-            <a href="tel:8310490087" className="font-medium text-primary underline decoration-2 underline-offset-4">8310490087</a>{" "}
+            <a href="tel:6362428384" className="font-medium text-primary underline decoration-2 underline-offset-4">6362428384</a>{" "}
             to order.
           </p>
           <nav className="mt-10 flex flex-wrap gap-2">

@@ -20,8 +20,8 @@ export function Footer() {
               A small organic market and bakery — hand-picked, tree-ripened
               fruit and soft, freshly-baked breads, buns and crunchy bites.
             </p>
-            <a href="tel:8310490087" className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent">
-              <Phone className="size-4" /> 8310490087
+            <a href="tel:6362428384" className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-accent">
+              <Phone className="size-4" /> 6362428384
             </a>
           </div>
           <FooterCol title="Fresh Fruits" links={[

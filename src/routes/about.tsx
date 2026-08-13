@@ -97,8 +97,8 @@ function About() {
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link to="/fruits" className="inline-flex items-center gap-3 rounded-full bg-primary-foreground px-8 py-4 text-sm font-medium text-primary hover:bg-accent hover:text-accent-foreground">Shop fresh fruits</Link>
             <Link to="/bakery" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-4 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/10">Browse the bakery</Link>
-            <a href="tel:8310490087" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-4 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/10">
-              <Phone className="size-4" /> 8310490087
+            <a href="tel:6362428384" className="inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-4 text-sm font-medium text-primary-foreground hover:bg-primary-foreground/10">
+              <Phone className="size-4" /> 6362428384
             </a>
           </div>
         </div>

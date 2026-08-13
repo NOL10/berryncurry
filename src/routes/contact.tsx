@@ -27,7 +27,7 @@ function Contact() {
           back to you personally.
         </p>
         <ul className="mt-10 space-y-5 text-sm">
-          <Item icon={<Phone className="size-4" />} label="Call / WhatsApp" value="8310490087" />
+          <Item icon={<Phone className="size-4" />} label="Call / WhatsApp" value="6362428384" />
           <Item icon={<Mail className="size-4" />} label="Email" value="hello@berryncurry.com" />
           <Item icon={<MapPin className="size-4" />} label="Studio" value="Indiranagar, Bengaluru" />
         </ul>
