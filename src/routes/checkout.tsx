@@ -264,8 +264,7 @@ function CheckoutPage() {
           <fieldset className="space-y-4">
             <legend className="font-display text-2xl text-foreground">Payment</legend>
             <div className="rounded-sm border border-border bg-muted/40 p-5 text-sm text-muted-foreground">
-              Secure online payment via Razorpay. Test mode is enabled while test API keys are
-              configured.
+              Secure online payment via Razorpay.
             </div>
             {error && (
               <div className="flex items-start gap-2 rounded-sm border border-destructive/30 bg-destructive/10 p-4 text-sm text-destructive">
