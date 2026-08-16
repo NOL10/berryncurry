@@ -121,7 +121,7 @@ function FruitsHome() {
             <div className="lg:sticky lg:top-32 lg:h-fit">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Chapter three</p>
               <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
-                The full<br /><span className="italic">exotic collection.</span>
+                The Full<br /><span className="italic">Exotic Collection.</span>
               </h2>
               <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
                 From avocados to dragon fruit, blueberries to jackfruit. Our complete collection of exotic organic fruits, sourced from the best farms across India.
