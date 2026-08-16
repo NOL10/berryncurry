@@ -110,7 +110,7 @@ function CheckoutPage() {
     );
   }
 
-  const delivery = subtotal >= 500 || subtotal === 0 ? 0 : 100;
+  const delivery = subtotal === 0 ? 0 : 100;
   const total = subtotal + delivery;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {

@@ -76,6 +76,7 @@ function CartPage() {
           <Link to="/checkout" className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-clay-deep">
             Proceed to checkout
           </Link>
+          <p className="mt-3 text-center text-xs text-muted-foreground">Minimum order value: ₹500</p>
           <div className="mt-4 flex justify-center gap-4 text-sm">
             <Link to="/fruits/shop" className="text-muted-foreground underline-offset-4 hover:text-primary hover:underline">More fruits</Link>
             <Link to="/bakery/shop" className="text-muted-foreground underline-offset-4 hover:text-primary hover:underline">More bakery</Link>

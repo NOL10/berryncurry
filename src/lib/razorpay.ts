@@ -100,7 +100,7 @@ function calculateOrder(items: CheckoutCartItem[]) {
   });
 
   const subtotal = normalizedItems.reduce((sum, item) => sum + item.lineTotal, 0);
-  const delivery = subtotal >= 500 || subtotal === 0 ? 0 : 100;
+  const delivery = subtotal === 0 ? 0 : 100;
 
   return {
     items: normalizedItems,
