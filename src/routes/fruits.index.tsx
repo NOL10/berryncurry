@@ -9,20 +9,19 @@ import { FruitCard } from "@/components/fruits/FruitCard";
 export const Route = createFileRoute("/fruits/")({
   head: () => ({
     meta: [
-      { title: "Fresh Fruits — Berry and Curry" },
-      { name: "description", content: "Tree-ripened mangoes, curated combos and exotic organic fruit, hand-picked from small Indian orchards." },
-      { property: "og:title", content: "Fresh Fruits — Berry and Curry" },
-      { property: "og:description", content: "Single-origin mangoes and rare exotic fruit, naturally ripened." },
-      { property: "og:image", content: "https://berryncurry.com/wp-content/uploads/2025/06/dasheri-300x300.webp" },
+      { title: "Exotic Fruits — Berry and Curry" },
+      { name: "description", content: "Exotic organic fruits — avocados, berries, dragon fruit, and more, hand-picked from small orchards." },
+      { property: "og:title", content: "Exotic Fruits — Berry and Curry" },
+      { property: "og:description", content: "Rare exotic fruits, naturally ripened and delivered fresh." },
+      { property: "og:image", content: "https://berryncurry.com/wp-content/uploads/2025/05/exotic-flat.jpg" },
     ],
   }),
   component: FruitsHome,
 });
 
 function FruitsHome() {
-  const mangoes = fruitsByCategory("mangoes").slice(0, 4);
-  const combos = fruitsByCategory("combos");
   const exotic = fruitsByCategory("exotic");
+  const baskets = fruitsByCategory("baskets");
 
   return (
     <>
@@ -30,17 +29,15 @@ function FruitsHome() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 py-14 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-10 lg:py-24">
           <div className="relative z-10 order-2 lg:order-1">
             <p className="inline-flex items-center gap-2 rounded-full border border-border/70 bg-background/70 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-muted-foreground backdrop-blur">
-              <span className="size-1.5 rounded-full bg-primary" /> Mango season · vol. 06
+              <span className="size-1.5 rounded-full bg-primary" /> Exotic fruits · fresh daily
             </p>
             <h1 className="mt-6 font-display text-5xl leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-[5.25rem]">
-              A mango<br />
-              <span className="italic text-primary">worth waiting</span><br />
-              a year for.
+              Rare fruits,<br />
+              <span className="italic text-primary">extraordinary</span><br />
+              taste.
             </h1>
             <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Tree-ripened. Hand-picked. Chemical-free. Sent straight from small
-              orchards across India to your kitchen — never a day older than it
-              should be.
+              Avocados from Nilgiri hills. Blueberries from cool-climate farms. Dragon fruit from Andhra. Exotic organic fruits, naturally ripened and delivered fresh.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <Link to="/fruits/shop" className="group inline-flex items-center gap-3 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-all hover:gap-4 hover:bg-clay-deep">
@@ -52,15 +49,15 @@ function FruitsHome() {
               </Link>
             </div>
             <dl className="mt-14 grid grid-cols-3 gap-6 border-t border-border/70 pt-8 text-left">
-              <Stat n="12+" l="Heritage varietals" />
+              <Stat n="10+" l="Exotic varieties" />
               <Stat n="48h" l="Farm to doorstep" />
-              <Stat n="0" l="Ripening chemicals" />
+              <Stat n="100%" l="Organic" />
             </dl>
           </div>
           <div className="order-1 lg:order-2">
             <div className="relative">
               <div className="absolute -inset-3 rounded-md bg-sage/25 blur-2xl" aria-hidden />
-              <img src={heroMango} alt="A ripe mango cradled by fresh leaves" width={1600} height={1408} className="relative aspect-[7/6] w-full rounded-sm object-cover shadow-[0_30px_80px_-30px_rgba(120,60,30,0.35)]" />
+              <img src={exoticFlat} alt="Flat lay of exotic fruits" width={1600} height={1408} className="relative aspect-[7/6] w-full rounded-sm object-cover shadow-[0_30px_80px_-30px_rgba(120,60,30,0.35)]" />
             </div>
           </div>
         </div>
@@ -71,30 +68,28 @@ function FruitsHome() {
           <div className="max-w-xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Chapter one</p>
             <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
-              Single-origin mangoes,<br />picked at their peak.
+              Exotic organic fruits,<br />picked at their peak.
             </h2>
           </div>
-          <Link to="/fruits/shop" hash="mangoes" className="group inline-flex items-center gap-2 text-sm font-medium text-foreground underline decoration-primary decoration-2 underline-offset-8">
-            All mangoes <ArrowUpRight className="size-4" />
+          <Link to="/fruits/shop" hash="exotic" className="group inline-flex items-center gap-2 text-sm font-medium text-foreground underline decoration-primary decoration-2 underline-offset-8">
+            All exotic fruits <ArrowUpRight className="size-4" />
           </Link>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
-          {mangoes.map((p) => <FruitCard key={p.slug} product={p} />)}
+          {exotic.slice(0, 4).map((p) => <FruitCard key={p.slug} product={p} />)}
         </div>
       </section>
 
       <section className="bg-sage/25">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 py-24 lg:grid-cols-[1fr_1.1fr] lg:gap-20 lg:px-10">
-          <img src={storyHands} alt="A farmer holding freshly harvested mangoes" width={1408} height={1008} loading="lazy" className="aspect-[4/3] w-full rounded-sm object-cover" />
+          <img src={storyHands} alt="Fresh exotic fruits being sorted" width={1408} height={1008} loading="lazy" className="aspect-[4/3] w-full rounded-sm object-cover" />
           <div>
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-sage-deep">Our sourcing</p>
             <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
-              <span className="italic">Twelve orchards.</span><br />One promise.
+              <span className="italic">Direct from farms.</span><br />Peak freshness.
             </h2>
             <p className="mt-6 text-base leading-relaxed text-foreground/80">
-              We work with a small handful of family-run orchards from Uttar
-              Pradesh to Karnataka. Every crate is inspected by hand, ripened on
-              the tree, and packed the day it's picked.
+              We source our exotic fruits from certified organic farms across India — Nilgiri avocados, cool-climate blueberries, Andhra dragon fruit. Every fruit is inspected by hand and delivered fresh.
             </p>
             <Link to="/about" className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-primary underline decoration-primary decoration-2 underline-offset-8">
               Read the story <ArrowUpRight className="size-4" />
@@ -108,15 +103,15 @@ function FruitsHome() {
           <div className="max-w-xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Chapter two</p>
             <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
-              Curated combos<br /><span className="italic">for the season.</span>
+              Fruit baskets<br /><span className="italic">thoughtfully arranged.</span>
             </h2>
           </div>
-          <Link to="/fruits/shop" hash="combos" className="group inline-flex items-center gap-2 text-sm font-medium text-foreground underline decoration-primary decoration-2 underline-offset-8">
-            All combos <ArrowUpRight className="size-4" />
+          <Link to="/fruits/shop" hash="baskets" className="group inline-flex items-center gap-2 text-sm font-medium text-foreground underline decoration-primary decoration-2 underline-offset-8">
+            All baskets <ArrowUpRight className="size-4" />
           </Link>
         </div>
         <div className="mt-12 grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-          {combos.map((p) => <FruitCard key={p.slug} product={p} />)}
+          {baskets.map((p) => <FruitCard key={p.slug} product={p} />)}
         </div>
       </section>
 
@@ -126,11 +121,10 @@ function FruitsHome() {
             <div className="lg:sticky lg:top-32 lg:h-fit">
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Chapter three</p>
               <h2 className="mt-3 font-display text-4xl leading-tight text-foreground sm:text-5xl">
-                Beyond<br /><span className="italic">the mango.</span>
+                The full<br /><span className="italic">exotic collection.</span>
               </h2>
               <p className="mt-6 max-w-md text-base leading-relaxed text-muted-foreground">
-                Blueberries from cool-climate farms. Nilgiri avocados. Dragon
-                fruit from Andhra. A short, rotating list of the rare and the seasonal.
+                From avocados to dragon fruit, blueberries to jackfruit. Our complete collection of exotic organic fruits, sourced from the best farms across India.
               </p>
               <img src={exoticFlat} alt="Flat lay of exotic fruits" width={1408} height={1008} loading="lazy" className="mt-10 aspect-[4/3] w-full rounded-sm object-cover" />
             </div>
