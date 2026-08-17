@@ -89,19 +89,19 @@ function CheckoutPage() {
 
   if (items.length === 0 && status !== "success") {
     return (
-      <section className="mx-auto max-w-2xl px-6 py-24 text-center lg:py-32">
-        <h1 className="font-display text-5xl text-foreground">Nothing to check out.</h1>
-        <p className="mt-4 text-muted-foreground">Add a few items to your basket first.</p>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
+      <section className="mx-auto max-w-2xl px-5 py-16 text-center sm:px-6 sm:py-24 lg:py-32">
+        <h1 className="font-display text-4xl text-foreground sm:text-5xl">Nothing to check out.</h1>
+        <p className="mt-4 text-sm text-muted-foreground sm:text-base">Add a few items to your basket first.</p>
+        <div className="mt-6 flex flex-wrap justify-center gap-3 sm:mt-8">
           <Link
             to="/fruits/shop"
-            className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-clay-deep"
+            className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-clay-deep sm:px-6 sm:py-3"
           >
             Shop fruits
           </Link>
           <Link
             to="/bakery/shop"
-            className="rounded-full border border-border px-6 py-3 text-sm font-medium hover:border-primary hover:text-primary"
+            className="rounded-full border border-border px-5 py-2.5 text-sm font-medium hover:border-primary hover:text-primary sm:px-6 sm:py-3"
           >
             Shop bakery
           </Link>
@@ -184,26 +184,26 @@ function CheckoutPage() {
 
   if (status === "success") {
     return (
-      <section className="mx-auto max-w-xl px-6 py-24 text-center lg:py-32">
-        <CheckCircle2 className="mx-auto size-12 text-primary" />
-        <h1 className="mt-6 font-display text-5xl text-foreground">Order placed successfully!</h1>
-        <p className="mt-4 text-muted-foreground">
+      <section className="mx-auto max-w-xl px-5 py-16 text-center sm:px-6 sm:py-24 lg:py-32">
+        <CheckCircle2 className="mx-auto size-10 text-primary sm:size-12" />
+        <h1 className="mt-5 font-display text-4xl text-foreground sm:mt-6 sm:text-5xl">Order placed successfully!</h1>
+        <p className="mt-4 text-sm text-muted-foreground sm:text-base">
           Payment received. Your Razorpay payment reference is{" "}
           <span className="font-mono font-semibold text-foreground">{orderId}</span>.
         </p>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-xs text-muted-foreground sm:text-sm">
           We'll call you shortly on the number you provided to confirm delivery.
         </p>
-        <div className="mt-8 flex flex-wrap justify-center gap-3">
+        <div className="mt-6 flex flex-wrap justify-center gap-3 sm:mt-8">
           <button
             onClick={() => navigate({ to: "/" })}
-            className="rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-clay-deep"
+            className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-clay-deep sm:px-6 sm:py-3"
           >
             Back home
           </button>
           <Link
             to="/bakery/shop"
-            className="rounded-full border border-border px-6 py-3 text-sm font-medium hover:border-primary hover:text-primary"
+            className="rounded-full border border-border px-5 py-2.5 text-sm font-medium hover:border-primary hover:text-primary sm:px-6 sm:py-3"
           >
             Keep shopping
           </Link>
@@ -215,17 +215,17 @@ function CheckoutPage() {
   const busy = status === "processing";
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-12 lg:px-10 lg:py-16">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">Checkout</p>
-      <h1 className="mt-3 font-display text-5xl leading-[1.05] text-foreground">Almost there.</h1>
+    <section className="mx-auto max-w-6xl px-5 py-10 sm:px-6 sm:py-12 lg:px-10 lg:py-16">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary sm:text-[11px]">Checkout</p>
+      <h1 className="mt-2 font-display text-4xl leading-[1.05] text-foreground sm:mt-3 sm:text-5xl">Almost there.</h1>
 
       <form
         onSubmit={handleSubmit}
-        className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-[1.4fr_1fr]"
+        className="mt-8 grid grid-cols-1 gap-8 sm:mt-12 lg:grid-cols-[1.4fr_1fr] lg:gap-12"
       >
-        <div className="space-y-8">
-          <fieldset className="space-y-4">
-            <legend className="font-display text-2xl text-foreground">Contact</legend>
+        <div className="space-y-6 sm:space-y-8">
+          <fieldset className="space-y-3 sm:space-y-4">
+            <legend className="font-display text-xl text-foreground sm:text-2xl">Contact</legend>
             <Field label="Full name" name="name" defaultValue={savedCustomer.name} required />
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <Field
@@ -245,8 +245,8 @@ function CheckoutPage() {
             </div>
           </fieldset>
 
-          <fieldset className="space-y-4">
-            <legend className="font-display text-2xl text-foreground">Delivery</legend>
+          <fieldset className="space-y-3 sm:space-y-4">
+            <legend className="font-display text-xl text-foreground sm:text-2xl">Delivery</legend>
             <Field
               label="Address line 1"
               name="address1"
@@ -261,9 +261,9 @@ function CheckoutPage() {
             </div>
           </fieldset>
 
-          <fieldset className="space-y-4">
-            <legend className="font-display text-2xl text-foreground">Payment</legend>
-            <div className="rounded-sm border border-border bg-muted/40 p-5 text-sm text-muted-foreground">
+          <fieldset className="space-y-3 sm:space-y-4">
+            <legend className="font-display text-xl text-foreground sm:text-2xl">Payment</legend>
+            <div className="rounded-sm border border-border bg-muted/40 p-4 text-xs text-muted-foreground sm:p-5 sm:text-sm">
               Secure online payment via Razorpay.
             </div>
             {error && (
@@ -278,9 +278,9 @@ function CheckoutPage() {
           </fieldset>
         </div>
 
-        <aside className="h-fit rounded-sm border border-border bg-card p-6">
-          <h2 className="font-display text-2xl text-foreground">Order summary</h2>
-          <ul className="mt-4 divide-y divide-border/70 text-sm">
+        <aside className="h-fit rounded-sm border border-border bg-card p-5 sm:p-6">
+          <h2 className="font-display text-xl text-foreground sm:text-2xl">Order summary</h2>
+          <ul className="mt-3 divide-y divide-border/70 text-xs sm:mt-4 sm:text-sm">
             {items.map((i) => (
               <li key={`${i.dept}:${i.slug}`} className="flex justify-between gap-3 py-3">
                 <span className="min-w-0 truncate">
@@ -293,7 +293,7 @@ function CheckoutPage() {
               </li>
             ))}
           </ul>
-          <dl className="mt-4 space-y-2 border-t border-border/70 pt-4 text-sm">
+          <dl className="mt-3 space-y-2 border-t border-border/70 pt-3 text-xs sm:mt-4 sm:text-sm">
             <div className="flex justify-between">
               <dt className="text-muted-foreground">Subtotal</dt>
               <dd>₹{subtotal.toLocaleString("en-IN")}</dd>
@@ -303,16 +303,16 @@ function CheckoutPage() {
               <dd>{delivery === 0 ? "Free" : `₹${delivery}`}</dd>
             </div>
           </dl>
-          <div className="mt-4 flex items-baseline justify-between border-t border-border/70 pt-4">
-            <span className="font-display text-lg">Total</span>
-            <span className="font-display text-2xl text-foreground">
+          <div className="mt-3 flex items-baseline justify-between border-t border-border/70 pt-3 sm:mt-4 sm:pt-4">
+            <span className="font-display text-base sm:text-lg">Total</span>
+            <span className="font-display text-xl text-foreground sm:text-2xl">
               ₹{total.toLocaleString("en-IN")}
             </span>
           </div>
           <button
             type="submit"
             disabled={busy}
-            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-clay-deep disabled:opacity-70"
+            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-clay-deep disabled:opacity-70 sm:mt-6 sm:px-6 sm:py-3.5"
           >
             {busy && <Loader2 className="size-4 animate-spin" />}
             {busy ? "Opening Razorpay…" : `Pay ₹${total.toLocaleString("en-IN")}`}
