@@ -155,9 +155,9 @@ export const BAKERY_PRODUCTS: BakeProduct[] = [
   mk("vanilla-muffin", "Vanilla Muffin", "muffins", 90, "per piece", "Soft, buttery vanilla muffin.", "/produts/vanilla_muffins.jpeg", ["Maida", "Vanilla", "Butter", "Sugar", "Eggs", "Milk"]),
 
   // Donuts
-  mk("mini-donuts", "Mini Donuts", "donuts", 120, "6 pcs", "Pack of six sweet mini donuts.", "/produts/mini donuts.jpeg", ["Maida", "Sugar", "Butter", "Yeast", "Milk", "Glaze"]),
-  mk("chocolate-donuts", "Chocolate Donuts", "donuts", 150, "6 pcs", "Chocolate-glazed mini donuts.", "/produts/chocloate donuts.jpeg", ["Maida", "Cocoa", "Sugar", "Butter", "Yeast", "Milk", "Chocolate Glaze"]),
-  mk("kitkat-donuts", "KitKat Donuts", "donuts", 180, "6 pcs", "KitKat-topped chocolate donuts.", "/produts/kitkat dounuts.jpeg", ["Maida", "Cocoa", "Sugar", "Butter", "Yeast", "Milk", "KitKat", "Chocolate Glaze"]),
+  mk("mini-donuts", "Mini Donuts", "donuts", 120, "per piece", "Pack of six sweet mini donuts.", "/produts/mini donuts.jpeg", ["Maida", "Sugar", "Butter", "Yeast", "Milk", "Glaze"]),
+  mk("chocolate-donuts", "Chocolate Donuts", "donuts", 150, "per piece", "Chocolate-glazed mini donuts.", "/produts/chocloate donuts.jpeg", ["Maida", "Cocoa", "Sugar", "Butter", "Yeast", "Milk", "Chocolate Glaze"]),
+  mk("kitkat-donuts", "KitKat Donuts", "donuts", 180, "per piece", "KitKat-topped chocolate donuts.", "/produts/kitkat dounuts.jpeg", ["Maida", "Cocoa", "Sugar", "Butter", "Yeast", "Milk", "KitKat", "Chocolate Glaze"]),
   // mk("mini-donuts-2", "Mini Donuts", "donuts", 120, "6 pcs", "Classic glazed mini donuts.", "/produts/minidonoguts.jpeg", ["Maida", "Sugar", "Butter", "Yeast", "Milk", "Glaze"]),
 ];
 
