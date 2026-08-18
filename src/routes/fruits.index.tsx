@@ -115,25 +115,6 @@ function FruitsHome() {
         </div>
       </section>
 
-      <section className="border-t border-border/60 bg-cream">
-        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-24 lg:px-10">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1fr_1.4fr] lg:gap-16">
-            <div className="lg:sticky lg:top-32 lg:h-fit">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-primary sm:text-[11px]">Chapter three</p>
-              <h2 className="mt-2 font-display text-3xl leading-tight text-foreground sm:mt-3 sm:text-4xl sm:text-5xl">
-                The Full<br /><span className="italic">Exotic Collection.</span>
-              </h2>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground sm:mt-6 sm:text-base">
-                From avocados to dragon fruit, blueberries to jackfruit. Our complete collection of exotic organic fruits, sourced from the best farms across India.
-              </p>
-              <img src={exoticFlat} alt="Flat lay of exotic fruits" width={1408} height={1008} loading="lazy" className="mt-6 aspect-[4/3] w-full rounded-sm object-cover sm:mt-10" />
-            </div>
-            <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-14">
-              {exotic.map((p) => <FruitCard key={p.slug} product={p} />)}
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="bg-cream">
         <div className="mx-auto max-w-7xl px-5 py-16 sm:px-6 sm:py-24 lg:px-10">
