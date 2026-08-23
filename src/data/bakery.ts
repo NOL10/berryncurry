@@ -69,7 +69,7 @@ const mk = (
 
 export const BAKERY_PRODUCTS: BakeProduct[] = [
   // Pav & Bases
-  mk("bombay-pav", "Bombay Pav", "pav-bases", 45, "per pack", "Soft, glossy classic Bombay pav.", "/produts/pav_buns.jpeg", ["Maida", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
+  mk("bombay-pav", "Bombay Pav", "pav-bases", 10, "per pack", "Soft, glossy classic Bombay pav.", "/produts/pav_buns.jpeg", ["Maida", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
   mk("ww-bombay-pav", "Whole Wheat Bombay Pav", "pav-bases", 50, "per pack", "The classic pav, gone wholewheat.", "/produts/pav_buns.jpeg", ["Whole Wheat Flour", "Yeast", "Sugar", "Salt", "Water", "Butter"]),
   mk("pizza-base", "Pizza Base", "pav-bases", 40, "per pack", "Ready-to-top, evenly baked base.", "/produts/pizza_base.jpeg", ["Maida", "Yeast", "Sugar", "Salt", "Water", "Olive Oil"]),
   mk("ww-pizza-base", "Whole Wheat Pizza Base", "pav-bases", 45, "per pack", "Nutty wholewheat base for guilt-free pizzas.", "/produts/wheat_pizza_base.jpeg", ["Whole Wheat Flour", "Yeast", "Sugar", "Salt", "Water", "Olive Oil"]),
